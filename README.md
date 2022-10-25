@@ -20,24 +20,22 @@ Account page – as navbar with name, logout, favorites
 Favorites page – user can check out his favorite links
 
 Alkaline food – links to the recipe topics
-
-Breakfast 
-Brunch / Lunch
-Dinner
-Snacks
-Sweets
+Breakfast, 
+Brunch/Lunch,
+Dinner,
+Snacks,
+Sweets,
 Drinks
 
 ## Add-ons if time
 
 Selfcare – links to the selfcare topics
-
-Breathing
-Exercises
-Bathroom (shower, care, oils)
+Breathing,
+Exercises,
+Bodycare,
 Cosmetics
 
 Forum – exchange between users
 
-8. 
+Map tracker – shows users links to restaurants
 
