@@ -1,4 +1,4 @@
-# Alkaline Food App (name is comin´up, something with lemon)
+# Alkaline Food App (name is comin´up)
 
 An app that facilitates the alkaline lifestyle in everyday life. Users can create a collection of their favorite recipes, tips and lifehacks (and share their experiences with each other).
 
