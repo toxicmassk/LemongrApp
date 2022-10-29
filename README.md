@@ -42,7 +42,7 @@ POST - '/create-account' - Handle sign in form submission.: Julia
 
 GET - '/account' - Load authenticated user: Julia
 POST - '/account/delete' - Handle profile deletion form submission: Julia
-POST - '/loug-out' - Handles log-out Submission
+POST - '/loug-out' - Handles log-out Submission: Julia
 
 GET - '/recipes' - Load all recipe categories : Wibi
 GET - '/recipes/breakfast‘ - Load all breakfast recipes : Wibi
@@ -83,14 +83,16 @@ user: ObjectId, ref: 'User', required
 
 ## Wishlist
 
-###Pages
+### Pages
+
 Selfcare – links to the selfcare topics (Breathing, Exercises, Bodycare, Cosmetics)
 
 Forum – exchange between users
 
 Map tracker – shows users links to restaurants
 
-###Search function
+### Search function
+
 that searches for individual ingredients from the refrigerator
 
 ---
