@@ -16,7 +16,7 @@ Above each page is a menu with links to Account, Alkaline Food, Selfcare, search
 
 Account - Allows user to watch/delete one of their favorite links
 
-Favorites - Allows User to check their favorite links
+Favorites - Allows User to check their favorite links (display list of recipes favorited by user)
 
 Alkaline Food - links to the recipes (Breakfast, Lunch, Dinner, Snacks/Sweets,
 Drinks)
@@ -45,23 +45,26 @@ POST - '/create-account' - Handle sign in form submission
 `Julia`
 GET - '/account' - Load authenticated user
 POST - '/account/delete' - Handle profile deletion form submission
-POST - '/loug-out' - Handles log-out Submission
+POST - '/log-out' - Handles log-out Submission
 
 `Wibi`
 GET - '/recipes' - Load all recipe categories
 GET - '/recipes/breakfast‘ - Load all breakfast recipes
-GET - '/recipes/breakfast/:id‘ - Load a single breakfast recipe
+// GET - '/recipes/breakfast/:id‘ - Load a single breakfast recipe
 GET - '/recipes/lunch‘ - Load all breakfast recipes
-GET - '/recipes/lunch/:id‘ - Load a single breakfast recipe
+// GET - '/recipes/lunch/:id‘ - Load a single breakfast recipe
 GET - '/recipes/dinner‘ - Load all breakfast recipes
-GET - '/recipes/dinner/:id‘ - Load a single breakfast recipe
+// GET - '/recipes/dinner/:id‘ - Load a single breakfast recipe
 GET - '/recipes/snacks‘ - Load all breakfast recipes
-GET - '/recipes/snacks/:id‘ - Load a single breakfast recipe
+// GET - '/recipes/snacks/:id‘ - Load a single breakfast recipe
 GET - '/recipes/drinks‘ - Load all breakfast recipes
-GET - '/recipes/drinks/:id‘ - Load a single breakfast recipe
+// GET - '/recipes/drinks/:id‘ - Load a single breakfast recipe
+GET - '/recipes/:id' - Load single recipe
+POST - '/recipe/:id/favorite' - Favorite recipe with id
+POST - '/recipe/:id/defavorite' - Defavorite recipe with id
 
 `Julia`
-GET - '/favorites/- Load favorites, render favorites page
+GET - '/favorites/- Load favorites, render favorites page (route guard middleware)
 
 ## Models
 

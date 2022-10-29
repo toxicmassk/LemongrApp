@@ -7,7 +7,7 @@ const Recipe = require('../models/recipe');
 const router = new Router();
 
 router.get('/', (req, res, next) => {
-  res.render('/recipes');
+  res.render('recipes');
 });
 
 router.get('/breakfast', (req, res, next) => {

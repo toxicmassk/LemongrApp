@@ -41,7 +41,9 @@ router.post('/log-in', (req, res, next) => {
   User.findOne({ email })
     .then((document) => {
       if (!document) {
-        return Promise.reject(new Error("There's no user with that email."));
+        return Promise.reject(
+          new Error("There's no user with that email, please create an account")
+        );
       } else {
         user = document;
         return bcryptjs.compare(password, user.passwordHashAndSalt);
@@ -52,7 +54,7 @@ router.post('/log-in', (req, res, next) => {
         req.session.userId = user._id;
         res.redirect('/account');
       } else {
-        return Promise.reject(new Error('Wrong password.'));
+        return Promise.reject(new Error('Wrong password, please try again.'));
       }
     })
     .catch((error) => {
