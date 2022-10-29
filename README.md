@@ -13,7 +13,7 @@ Sign-in – name, password, button
 
 ## Pages when signed in
 
-Above each page is a menu with Home(=Account), Alkaline Food, Selfcare, search function (+ page search function)
+Above each page is a menu with links to Account, Alkaline Food, Selfcare, search function (+ page search function)
 
 Account page – as navbar with name, logout, favorites 
 
