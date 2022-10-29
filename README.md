@@ -72,11 +72,7 @@ email: String, required
 passwordHashAndSalt: String, required
 picture: String
 
-<<<<<<< HEAD
-### Recipes : Wibi
-=======
 ### Recipes `Wibi`
->>>>>>> 36cf305 (Built recipe router)
 
 category: String, required
 picture: String
@@ -84,11 +80,7 @@ title: String
 ingredients: string (wenn array, könnten menschen nach zutaten suchen?)
 instructions: string
 
-<<<<<<< HEAD
-### Favorites: Julia
-=======
 ### Favorites `Julia`
->>>>>>> 36cf305 (Built recipe router)
 
 recipe: ObjectId, ref: ‚Favorite‘, required
 user: ObjectId, ref: 'User', required
