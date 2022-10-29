@@ -2,7 +2,7 @@
 
 const { Router } = require('express');
 
-const Recipes = require('./../models/recipes');
+const Recipe = require('../models/recipe');
 
 const router = new Router();
 
