@@ -33,46 +33,47 @@ Drinks recipes - shows user variation of recipes
 
 ##Route Handlers
 
-GET - '/' - renders home page.
+GET - '/' - renders home page. :Julia
 
-GET - '/authentication/log-in' - Render log in page
-POST - '/authentication/log-in' - Handle log in form submission
-GET - '/authentication/sign-up' - Render sign in page
-POST - '/authentication/sign-up' - Handle sign in form submission.
+GET - '/log-in' - Render log in page : Julia
+POST - '/log-in' - Handle log in form submission: Julia
+GET - '/create-account' - Render sign in page: Julia
+POST - '/create-account' - Handle sign in form submission.: Julia
 
-GET - ‚/account' - Load authenticated user
-POST - '/account/delete' - Handle profile deletion form submission
+GET - '/account' - Load authenticated user: Julia
+POST - '/account/delete' - Handle profile deletion form submission: Julia
+POST - '/loug-out' - Handles log-out Submission
 
-GET - '/recipes' - Load all recipe categories
-GET - '/recipes/breakfast‘ - Load all breakfast recipes
-GET - '/recipes/breakfast/:id‘ - Load a single breakfast recipe
-GET - '/recipes/lunch‘ - Load all breakfast recipes
-GET - '/recipes/lunch/:id‘ - Load a single breakfast recipe
-GET - '/recipes/dinner‘ - Load all breakfast recipes
+GET - '/recipes' - Load all recipe categories : Wibi
+GET - '/recipes/breakfast‘ - Load all breakfast recipes : Wibi
+GET - '/recipes/breakfast/:id‘ - Load a single breakfast recipe: Wibi
+GET - '/recipes/lunch‘ - Load all breakfast recipes: Wibi
+GET - '/recipes/lunch/:id‘ - Load a single breakfast recipe: Wibi
+GET - '/recipes/dinner‘ - Load all breakfast recipes: Wibi
 GET - '/recipes/dinner/:id‘ - Load a single breakfast recipe
 GET - '/recipes/snacks‘ - Load all breakfast recipes
 GET - '/recipes/snacks/:id‘ - Load a single breakfast recipe
 GET - '/recipes/drinks‘ - Load all breakfast recipes
 GET - '/recipes/drinks/:id‘ - Load a single breakfast recipe
 
-GET - ‚/favorites/- Load favorites, render favorites page
+GET - '/favorites/- Load favorites, render favorites page: Julia
 
 ##Models
 
-###User
+###User : CHECK!
 username: String, required
 email: String, required
 passwordHashAndSalt: String, required
 picture: String
 
-###Recipes
+###Recipes : Wibi
 category: String, required
 picture: String
 title: String
 ingredients: string (wenn array, könnten menschen nach zutaten suchen?)
 instructions: string
 
-###Favorites
+###Favorites: Julia
 recipe: ObjectId, ref: ‚Favorite‘, required
 user: ObjectId, ref: 'User', required
 (timestamps: true)
@@ -88,3 +89,9 @@ Map tracker – shows users links to restaurants
 
 ###Search function
 that searches for individual ingredients from the refrigerator
+
+---
+
+To Do Julia:
+
+- private hbs changed into account hbs ( alles veraendern )
