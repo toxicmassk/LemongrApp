@@ -31,7 +31,7 @@ Snacks/Sweets recipes - shows user variation of recipes
 
 Drinks recipes - shows user variation of recipes
 
-##Route Handlers
+## Route Handlers
 
 GET - '/' - renders home page. :Julia
 
@@ -58,22 +58,25 @@ GET - '/recipes/drinks/:id‘ - Load a single breakfast recipe
 
 GET - '/favorites/- Load favorites, render favorites page: Julia
 
-##Models
+## Models
 
-###User : CHECK!
+### User : CHECK!
+
 username: String, required
 email: String, required
 passwordHashAndSalt: String, required
 picture: String
 
-###Recipes : Wibi
+### Recipes : Wibi
+
 category: String, required
 picture: String
 title: String
 ingredients: string (wenn array, könnten menschen nach zutaten suchen?)
 instructions: string
 
-###Favorites: Julia
+### Favorites: Julia
+
 recipe: ObjectId, ref: ‚Favorite‘, required
 user: ObjectId, ref: 'User', required
 (timestamps: true)
@@ -92,6 +95,8 @@ that searches for individual ingredients from the refrigerator
 
 ---
 
-To Do Julia:
+## To Do Julia:
 
 - private hbs changed into account hbs ( alles veraendern )
+- sign-in = Log-in
+- sign-up = create-account

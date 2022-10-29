@@ -7,11 +7,11 @@ const User = require('./../models/user');
 
 const router = new Router();
 
-router.get('/sign-up', (req, res, next) => {
-  res.render('sign-up');
+router.get('/create-account', (req, res, next) => {
+  res.render('create-account');
 });
 
-router.post('/sign-up', (req, res, next) => {
+router.post('/create-account', (req, res, next) => {
   const { name, email, password } = req.body;
   bcryptjs
     .hash(password, 10)
@@ -24,18 +24,18 @@ router.post('/sign-up', (req, res, next) => {
     })
     .then((user) => {
       req.session.userId = user._id;
-      res.redirect('/private');
+      res.redirect('/account');
     })
     .catch((error) => {
       next(error);
     });
 });
 
-router.get('/sign-in', (req, res, next) => {
-  res.render('sign-in');
+router.get('/log-in', (req, res, next) => {
+  res.render('log-in');
 });
 
-router.post('/sign-in', (req, res, next) => {
+router.post('/log-in', (req, res, next) => {
   let user;
   const { email, password } = req.body;
   User.findOne({ email })
@@ -50,7 +50,7 @@ router.post('/sign-in', (req, res, next) => {
     .then((result) => {
       if (result) {
         req.session.userId = user._id;
-        res.redirect('/private');
+        res.redirect('/account');
       } else {
         return Promise.reject(new Error('Wrong password.'));
       }
@@ -60,7 +60,7 @@ router.post('/sign-in', (req, res, next) => {
     });
 });
 
-router.post('/sign-out', (req, res, next) => {
+router.post('/log-out', (req, res, next) => {
   req.session.destroy();
   res.redirect('/');
 });
