@@ -33,30 +33,35 @@ Drinks recipes - shows user variation of recipes
 
 ## Route Handlers
 
-GET - '/' - renders home page. :Julia
+`Julia`
+GET - '/' - renders home page.
 
-GET - '/log-in' - Render log in page : Julia
-POST - '/log-in' - Handle log in form submission: Julia
-GET - '/create-account' - Render sign in page: Julia
-POST - '/create-account' - Handle sign in form submission.: Julia
+`Julia`
+GET - '/log-in' - Render log in page
+POST - '/log-in' - Handle log in form submission
+GET - '/create-account' - Render sign in page
+POST - '/create-account' - Handle sign in form submission
 
-GET - '/account' - Load authenticated user: Julia
-POST - '/account/delete' - Handle profile deletion form submission: Julia
-POST - '/loug-out' - Handles log-out Submission: Julia
+`Julia`
+GET - '/account' - Load authenticated user
+POST - '/account/delete' - Handle profile deletion form submission
+POST - '/loug-out' - Handles log-out Submission
 
-GET - '/recipes' - Load all recipe categories : Wibi
-GET - '/recipes/breakfast‘ - Load all breakfast recipes : Wibi
-GET - '/recipes/breakfast/:id‘ - Load a single breakfast recipe: Wibi
-GET - '/recipes/lunch‘ - Load all breakfast recipes: Wibi
-GET - '/recipes/lunch/:id‘ - Load a single breakfast recipe: Wibi
-GET - '/recipes/dinner‘ - Load all breakfast recipes: Wibi
+`Wibi`
+GET - '/recipes' - Load all recipe categories
+GET - '/recipes/breakfast‘ - Load all breakfast recipes
+GET - '/recipes/breakfast/:id‘ - Load a single breakfast recipe
+GET - '/recipes/lunch‘ - Load all breakfast recipes
+GET - '/recipes/lunch/:id‘ - Load a single breakfast recipe
+GET - '/recipes/dinner‘ - Load all breakfast recipes
 GET - '/recipes/dinner/:id‘ - Load a single breakfast recipe
 GET - '/recipes/snacks‘ - Load all breakfast recipes
 GET - '/recipes/snacks/:id‘ - Load a single breakfast recipe
 GET - '/recipes/drinks‘ - Load all breakfast recipes
 GET - '/recipes/drinks/:id‘ - Load a single breakfast recipe
 
-GET - '/favorites/- Load favorites, render favorites page: Julia
+`Julia`
+GET - '/favorites/- Load favorites, render favorites page
 
 ## Models
 
@@ -67,7 +72,7 @@ email: String, required
 passwordHashAndSalt: String, required
 picture: String
 
-### Recipes : Wibi
+### Recipes `Wibi`
 
 category: String, required
 picture: String
@@ -75,7 +80,7 @@ title: String
 ingredients: string (wenn array, könnten menschen nach zutaten suchen?)
 instructions: string
 
-### Favorites: Julia
+### Favorites `Julia`
 
 recipe: ObjectId, ref: ‚Favorite‘, required
 user: ObjectId, ref: 'User', required
