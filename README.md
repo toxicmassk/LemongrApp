@@ -94,11 +94,15 @@ Selfcare – links to the selfcare topics (Breathing, Exercises, Bodycare, Cosme
 
 Forum – exchange between users
 
-Map tracker – shows users links to restaurants
+Map tracker – users can post restaurant links, shows users links to restaurants
 
 ### Search function
 
-that searches for individual ingredients from the refrigerator
+users can searches recipes by individual ingredients (that they have)
+
+### Post recipes
+
+users can post own recipes that fit the alkaline criteria (filter)
 
 ---
 

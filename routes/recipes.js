@@ -6,29 +6,32 @@ const Recipe = require('../models/recipe');
 
 const router = new Router();
 
-router.get('/recipes', (req, res, next) => {
-  // frage: solte es nicht nur '/' sein, kollidiertdann aber mit home?
-  res.render('recipes');
+router.get('/', (req, res, next) => {
+  res.render('/recipes');
 });
 
 router.get('/breakfast', (req, res, next) => {
-  res.render('recipes/breakfast');
+  res.render('recipes/category');
 });
 
-router.get('/breakfast/:id', (req, res, next) => {
-  res.render('recipes/breakfast');
+router.get('/lunch', (req, res, next) => {
+  res.render('recipes/category');
+});
+
+router.get('/dinner', (req, res, next) => {
+  res.render('recipes/category');
+});
+
+router.get('/snacks', (req, res, next) => {
+  res.render('recipes/category');
+});
+
+router.get('/drinks', (req, res, next) => {
+  res.render('recipes/category');
+});
+
+router.get('/:id', (req, res, next) => {
+  res.render('recipes/single-recipe');
 });
 
 module.exports = router;
-
-/*
-GET - '/recipes/breakfast/:id‘ - Load a single breakfast recipe: Wibi 
-GET - '/recipes/lunch‘ - Load all breakfast recipes: Wibi 
-GET - '/recipes/lunch/:id‘ - Load a single breakfast recipe: Wibi 
-GET - '/recipes/dinner‘ - Load all breakfast recipes: Wibi 
-GET - '/recipes/dinner/:id‘ - Load a single breakfast recipe 
-GET - '/recipes/snacks‘ - Load all breakfast recipes 
-GET - '/recipes/snacks/:id‘ - Load a single breakfast recipe 
-GET - '/recipes/drinks‘ - Load all breakfast recipes 
-GET - '/recipes/drinks/:id‘ - Load a single breakfast recipe
-*/
