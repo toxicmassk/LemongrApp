@@ -6,7 +6,7 @@ const Recipe = require('../models/recipe');
 
 const router = new Router();
 
-router.get('/recipes', (req, res, next) => {
+router.get('/', (req, res, next) => {
   // frage: solte es nicht nur '/' sein, kollidiertdann aber mit home?
   res.render('recipes');
 });
