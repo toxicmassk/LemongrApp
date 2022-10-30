@@ -6,15 +6,28 @@ const Recipe = require('../models/recipe');
 
 const router = new Router();
 
+// All recipes of any category
 router.get('/', (req, res, next) => {
-  res.render('recipes/recipes');
-});
-
-// like this possible?
-router.get('/category', (req, res, next) => {
   Recipe.find()
     .then((recipes) => {
-      res.render('recipes/category', { recipes });
+      res.render('recipes/recipes', { recipes });
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
+// Each recipe category - creating the categories with partials?
+router.get('/category', (req, res, next) => {
+  res.render('recipes/category');
+});
+
+// Single recipe
+router.get('/category/:id', (req, res, next) => {
+  const id = req.params.id;
+  Recipe.findById(id)
+    .then((recipe) => {
+      res.render('recipes/single-recipe', { recipe });
     })
     .catch((error) => {
       next(error);
@@ -23,27 +36,23 @@ router.get('/category', (req, res, next) => {
 
 /* OR...?
 router.get('/breakfast', (req, res, next) => {
-  res.render('recipes/category');
+  res.render('recipes/breakfast');
 });
 
 router.get('/lunch', (req, res, next) => {
-  res.render('recipes/category');
+  res.render('recipes/lunch');
 });
 
 router.get('/dinner', (req, res, next) => {
-  res.render('recipes/category');
+  res.render('recipes/dinner');
 });
 
 router.get('/snacks', (req, res, next) => {
-  res.render('recipes/category');
+  res.render('recipes/snacks');
 });
 
 router.get('/drinks', (req, res, next) => {
-  res.render('recipes/category');
-});
-
-router.get('/:id', (req, res, next) => {
-  res.render('recipes/single-recipe');
+  res.render('recipes/drinks');
 });
 */
 
