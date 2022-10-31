@@ -1,15 +1,15 @@
 <h1>Single recipe</h1>
 
-{{#each recipe}}
-  <h3>{{category}}</h3>
-  {{! why are there several images?}}
-  <img src="{{picture}}" alt="{{title}}" />
-  <h1>{{title}}</h1>
-  <ul>
-    {{! can eachs be nested?}}
-    {{#each ingredients}}
-      <li>{{this}}</li>
-    {{/each}}
-  </ul>
-  <p>{{instruction}}</p>
-{{/each}}
+<h3>{{recipe.category}}</h3>
+
+<h1>{{recipe.title}}</h1>
+<img src="{{recipe.picture}}" alt="{{recipe.title}}" />
+<ul>
+  {{#each recipe.ingredients}}
+    {{! what to write in the "li" if not "this"?}}
+    <li>{{this}}</li>
+  {{/each}}
+</ul>
+<p>{{recipe.instruction}}</p>
+
+<a href="/recipes/category">Go back</a>

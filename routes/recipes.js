@@ -6,20 +6,26 @@ const Recipe = require('../models/recipe');
 
 const router = new Router();
 
-// All recipes of any category
+// All recipe categories
 router.get('/', (req, res, next) => {
-  Recipe.find() // or should it be findOne({category..?})
+  Recipe.find()
     .then((recipes) => {
       res.render('recipes/recipes', { recipes });
     })
     .catch((error) => {
-      res.render('/');
+      res.redirect('/');
     });
 });
 
-// Each recipe category - creating the categories with partials?
+// Each category with its recipes - creating the categories with partials?
 router.get('/category', (req, res, next) => {
-  res.render('recipes/category');
+  Recipe.find()
+    .then((recipes) => {
+      res.render('recipes/category', { recipes });
+    })
+    .catch((error) => {
+      res.redirect('/recipes');
+    });
 });
 
 // Single recipe
@@ -30,11 +36,22 @@ router.get('/category/:id', (req, res, next) => {
       res.render('recipes/single-recipe', { recipe });
     })
     .catch((error) => {
-      res.render('recipes/category');
+      res.redirect('/recipes/category');
     });
 });
 
 /* OR...?
+router.get('/category', (req, res, next) => {
+  Recipe.find({category: 'breakfast'})
+    .then((recipes) => {
+      res.render('recipes/category', { recipes });
+    })
+    .catch((error) => {
+      res.redirect('/');
+    });
+});
+
+
 router.get('/breakfast', (req, res, next) => {
   res.render('recipes/breakfast');
 });

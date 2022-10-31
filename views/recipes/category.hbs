@@ -1,13 +1,16 @@
-<h1>Each recipe category</h1>
+<h1>Each category with its recipes</h1>
 
-<h1>{{recipe.category}}</h1>
+<h1>{{recipes.category}}</h1>
 
-<div>
-  <form method="GET" action="/recipes/single-recipe">
-    {{#each recipe}}
-      <label for="button">{{title}}</label>
-      <button>{{picture}}</button>
-    {{/each}}
+<ul>
+  {{#each recipes}}
+    <li>
+      <a href="/recipes/category/{{_id}}">
+        <img src="{{picture}}" alt="{{title}}" />
+        <h5>{{title}}</h5>
+      </a>
+    </li>
+  {{/each}}
+</ul>
 
-  </form>
-</div>
+<a href="/recipes">Go back</a>

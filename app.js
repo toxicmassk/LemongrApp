@@ -16,7 +16,6 @@ const authenticationDeserializer = require('./middleware/authentication-deserial
 const baseRouter = require('./routes/base');
 const authenticationRouter = require('./routes/authentication');
 const recipesRouter = require('./routes/recipes');
-//const accountRouter = require('./routes/account');       //@Ju: account-Router ist weg oder? also das hier auch?
 
 const app = express();
 
@@ -59,7 +58,6 @@ app.use(authenticationDeserializer);
 app.use('/', baseRouter);
 app.use('/authentication', authenticationRouter);
 app.use('/recipes', recipesRouter);
-//app.use('/account', accountRouter);   //@Ju: account-Router ist weg oder? also das hier auch?
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {

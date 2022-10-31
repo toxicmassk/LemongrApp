@@ -1,15 +1,9 @@
-<h1>All Recipes of any category</h1>
+<h1>All recipe categories</h1>
 
 <div>
   <form method="GET" action="/recipes/category">
     {{#each recipes}}
       <button>{{category}}</button>
     {{/each}}
-
-    {{!-- why does this not work?
-    {{#each recipes.category}}
-      <button>{{this}}</button>
-    {{/each}}
-    --}}
   </form>
 </div>
