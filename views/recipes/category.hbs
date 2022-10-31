@@ -1,1 +1,13 @@
 <h1>Each recipe category</h1>
+
+<h1>{{recipe.category}}</h1>
+
+<div>
+  <form method="GET" action="/recipes/single-recipe">
+    {{#each recipe}}
+      <label for="button">{{title}}</label>
+      <button>{{picture}}</button>
+    {{/each}}
+
+  </form>
+</div>

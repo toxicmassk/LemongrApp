@@ -8,12 +8,12 @@ const router = new Router();
 
 // All recipes of any category
 router.get('/', (req, res, next) => {
-  Recipe.find()
+  Recipe.find() // or should it be findOne({category..?})
     .then((recipes) => {
       res.render('recipes/recipes', { recipes });
     })
     .catch((error) => {
-      next(error);
+      res.render('/');
     });
 });
 
@@ -30,7 +30,7 @@ router.get('/category/:id', (req, res, next) => {
       res.render('recipes/single-recipe', { recipe });
     })
     .catch((error) => {
-      next(error);
+      res.render('recipes/category');
     });
 });
 
