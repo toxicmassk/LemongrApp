@@ -8,13 +8,14 @@ const routeGuardMiddleware = require('./../middleware/route-guard');
 const upload = require('./../upload');
 
 // POST - '/create' - Handles publication creation form submission.
+// Neeeds to be written new!
 favoriteRouter.post(
   '/create',
   routeGuardMiddleware,
   upload.single('picture'),
   (req, res, next) => {
-    const { message } = req.body;
-    const author = req.user._id;
+    const { favorite } = req.body;
+    const user = req.user._id;
     let picture;
     if (req.file) {
       picture = req.file.path;
@@ -89,5 +90,7 @@ favoriteRouter.post('/:id/delete', routeGuardMiddleware, (req, res, next) => {
       next(error);
     });
 });
+
+// This section needs to be written new aboveß
 
 module.exports = publicationRouter;

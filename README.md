@@ -37,15 +37,15 @@ Drinks recipes - shows user variation of recipes
 GET - '/' - renders home page.
 
 `Julia`
-GET - '/log-in' - Render log in page
-POST - '/log-in' - Handle log in form submission
-GET - '/create-account' - Render sign in page
-POST - '/create-account' - Handle sign in form submission
+GET - '/log-in' - Render log in page -done
+POST - '/log-in' - Handle log in form submission - done
+GET - '/create-account' - Render sign in page - done
+POST - '/create-account' - Handle sign in form submission - done
 
 `Julia`
 GET - '/account' - Load authenticated user
 POST - '/account/delete' - Handle profile deletion form submission
-POST - '/log-out' - Handles log-out Submission
+POST - '/log-out' - Handles log-out Submission - done
 
 `Wibi`
 GET - '/recipes' - Load all recipe categories
@@ -83,7 +83,7 @@ title: String
 ingredients: string (wenn array, könnten menschen nach zutaten suchen?)
 instructions: string
 
-### Favorites `Julia`
+### Favorites `Julia` - done
 
 recipe: ObjectId, ref: ‚Favorite‘, required
 user: ObjectId, ref: 'User', required
