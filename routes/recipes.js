@@ -20,21 +20,21 @@ router.get('/', routeGuard, (req, res, next) => {
 });
 
 // Each category with its recipes
-router.get('/category', routeGuard, (req, res, next) => {
+router.get('/category/:breakfast', routeGuard, (req, res, next) => {
   Recipe.find()
     .then((recipes) => {
-      res.render('recipes/category', { recipes });
+      res.render('recipes/categories/breakfast', { recipes });
     })
     .catch((error) => {
-      res.redirect('/recipes');
+      res.redirect('/recipes/category');
     });
 });
 
-/* Another version
+/* Cheap version
 router.get('/category', (req, res, next) => {
  Recipe.find({ category: { $all: ['breakfast'] } })
     .then((recipes) => {
-      res.render('recipes/partials/breakfast', { recipes });
+      res.render('recipes/categories/breakfast', { recipes });
     })
     .catch((error) => {
       res.redirect('/');
