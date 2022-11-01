@@ -4,14 +4,23 @@
 const express = require('express');
 const Favorite = require('./../models/favorite');
 const routeGuardMiddleware = require('./../middleware/route-guard');
-// const upload = require('./../upload');
 const Recipe = require('./../models/recipe');
 const User = require('./../models/user');
 
 const favoriteRouter = express.Router();
 
+favoriteRouter.get('/', routeGuardMiddleware, (req, res, next) => {
+  Recipe.find()
+    .then((favorite) => {
+      res.render('favorites/favorite', { favorite });
+    })
+    .catch((error) => {
+      res.redirect('/');
+    });
+});
+
 // get favorite, not sure if this is correct ..
-favoriteRouter.get('/:id/favorite', (req, res, next) => {
+favoriteRouter.get('/:id', (req, res, next) => {
   const { id } = req.params;
   let recipe, favorite;
   Recipe.findById(id)
@@ -56,7 +65,7 @@ favoriteRouter.get('/:id/favorite', (req, res, next) => {
 });
 
 // Post requests for favorite recipe
-favoriteRouter.post('/:id/favorite', routeGuardMiddleware, (req, res, next) => {
+favoriteRouter.post('/:id', routeGuardMiddleware, (req, res, next) => {
   const { id } = req.params;
   Favorite.create({
     user: req.user._id,
