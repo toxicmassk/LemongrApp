@@ -23,18 +23,6 @@ router.get('/', routeGuard, (req, res, next) => {
     });
 });
 
-/* Cheap version
-router.get('/category', (req, res, next) => {
- Recipe.find({ category: { $all: ['breakfast'] } })
-    .then((recipes) => {
-      res.render('recipes/categories/breakfast', { recipes });
-    })
-    .catch((error) => {
-      res.redirect('/');
-    });
-});
-*/
-
 // Single recipe
 router.get('/category/:id', routeGuard, (req, res, next) => {
   const id = req.params.id;
@@ -43,7 +31,7 @@ router.get('/category/:id', routeGuard, (req, res, next) => {
       res.render('recipes/single-recipe', { recipe });
     })
     .catch((error) => {
-      res.redirect('/recipes/category');
+      next(error);
     });
 });
 
