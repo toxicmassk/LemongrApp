@@ -40,24 +40,37 @@ GET - '/' - renders home page.
 
 `Julia` ✅
 GET - '/log-in' - Render log in page -done
+
 POST - '/log-in' - Handle log in form submission - done
+
 GET - '/create-account' - Render sign in page - done
+
 POST - '/create-account' - Handle sign in form submission - done
 
 `Julia`
 GET - '/account' - Load authenticated user
+
 POST - '/account/delete' - Handle profile deletion form submission
+
 POST - '/log-out' - Handles log-out Submission - done
 
 `Wibi`
 GET - '/recipes' - Load all recipe categories
+
 GET - '/recipes/breakfast‘ - Load all breakfast recipes
+
 GET - '/recipes/lunch‘ - Load all breakfast recipes
+
 GET - '/recipes/dinner‘ - Load all breakfast recipes
+
 GET - '/recipes/snacks‘ - Load all breakfast recipes
+
 GET - '/recipes/drinks‘ - Load all breakfast recipes
+
 GET - '/recipes/:id' - Load single recipe
+
 POST - '/recipe/:id/favorite' - Favorite recipe with id
+
 POST - '/recipe/:id/defavorite' - Defavorite recipe with id
 
 `Julia`
