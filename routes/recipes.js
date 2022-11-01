@@ -17,7 +17,7 @@ router.get('/', (req, res, next) => {
     });
 });
 
-// Each category with its recipes - creating the categories with partials?
+// Each category with its recipes
 router.get('/category', (req, res, next) => {
   Recipe.find()
     .then((recipes) => {
@@ -27,6 +27,18 @@ router.get('/category', (req, res, next) => {
       res.redirect('/recipes');
     });
 });
+
+/* Another version
+router.get('/category', (req, res, next) => {
+ Recipe.find({ category: { $all: ['breakfast'] } })
+    .then((recipes) => {
+      res.render('recipes/partials/breakfast', { recipes });
+    })
+    .catch((error) => {
+      res.redirect('/');
+    });
+});
+*/
 
 // Single recipe
 router.get('/category/:id', (req, res, next) => {
@@ -44,7 +56,7 @@ router.get('/category/:id', (req, res, next) => {
 router.get('/category', (req, res, next) => {
   Recipe.find({category: 'breakfast'})
     .then((recipes) => {
-      res.render('recipes/category', { recipes });
+      res.render('recipes/category/breakfast', { recipes });
     })
     .catch((error) => {
       res.redirect('/');
