@@ -23,7 +23,7 @@ router.get('/', routeGuard, (req, res, next) => {
 router.get('/category/:breakfast', routeGuard, (req, res, next) => {
   Recipe.find()
     .then((recipes) => {
-      res.render('recipes/categories/breakfast', { recipes });
+      res.render('recipes/categories/breakfast/:id', { recipes });
     })
     .catch((error) => {
       res.redirect('/recipes/category');
