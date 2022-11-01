@@ -1,4 +1,4 @@
-# Alkaline Food App (name is comin´up)
+# LemongrApp – Alkaline Food App
 
 An app that facilitates the alkaline lifestyle in everyday life. Users can create a collection of their favorite recipes, tips and lifehacks.
 
@@ -12,13 +12,13 @@ Sign in - Allows new user to sign in.
 
 ## Pages when signed in
 
-Above each page is a menu with links to Account, Alkaline Food, Selfcare, search function (+ page search function)
+Above each page is a burger-menu with links to Account, Alkaline Food, Selfcare, search function (+ page search function)
 
-Account - Allows user to watch/delete one of their favorite links
+Account - Allows user to navigate through the app, all the links
 
 Favorites - Allows User to check their favorite links (display list of recipes favorited by user)
 
-Alkaline Food - links to the recipes (Breakfast, Lunch, Dinner, Snacks/Sweets,
+Alkaline Food - links to the recipes (Breakfast, Lunch, Dinner, Snacks, Sweets,
 Drinks)
 
 Breakfast recipes - shows user variation of recipes
@@ -27,67 +27,82 @@ Lunch recipes - shows user variation of recipes
 
 Dinner recipes - shows user variation of recipes
 
-Snacks/Sweets recipes - shows user variation of recipes
+Snacks recipes - shows user variation of recipes
+
+Sweets recipes - shows user variation of recipes
 
 Drinks recipes - shows user variation of recipes
 
 ## Route Handlers
 
-`Julia`
+`Julia` ✅
+
 GET - '/' - renders home page.
 
-`Julia`
+`Julia` ✅
+
 GET - '/log-in' - Render log in page -done
+
 POST - '/log-in' - Handle log in form submission - done
+
 GET - '/create-account' - Render sign in page - done
+
 POST - '/create-account' - Handle sign in form submission - done
 
 `Julia`
+
 GET - '/account' - Load authenticated user
+
 POST - '/account/delete' - Handle profile deletion form submission
+
 POST - '/log-out' - Handles log-out Submission - done
 
 `Wibi`
+
 GET - '/recipes' - Load all recipe categories
+
 GET - '/recipes/breakfast‘ - Load all breakfast recipes
-// GET - '/recipes/breakfast/:id‘ - Load a single breakfast recipe
+
 GET - '/recipes/lunch‘ - Load all breakfast recipes
-// GET - '/recipes/lunch/:id‘ - Load a single breakfast recipe
+
 GET - '/recipes/dinner‘ - Load all breakfast recipes
-// GET - '/recipes/dinner/:id‘ - Load a single breakfast recipe
+
 GET - '/recipes/snacks‘ - Load all breakfast recipes
-// GET - '/recipes/snacks/:id‘ - Load a single breakfast recipe
+
 GET - '/recipes/drinks‘ - Load all breakfast recipes
-// GET - '/recipes/drinks/:id‘ - Load a single breakfast recipe
+
 GET - '/recipes/:id' - Load single recipe
+POST - '/recipe/:id/favorite' - Favorite recipe with id
+POST - '/recipe/:id/defavorite' - Defavorite recipe with id
 
 `Julia`
+
 GET - '/favorites/- Load favorites, render favorites page (route guard middleware)
 POST - '/recipe/:id/favorite' - Handle favorites form submission
 POST - '/recipe/:id/unfavorite' - Unfavorite recipe with id
 
 ## Models
 
-### User : CHECK!
+### User `Julia` ✅
 
 username: String, required
 email: String, required
 passwordHashAndSalt: String, required
 picture: String
 
-### Recipes `Wibi`
+### Recipes `Wibi` ✅
 
 category: String, required
 picture: String
 title: String
-ingredients: string (wenn array, könnten menschen nach zutaten suchen?)
+ingredients: string
 instructions: string
 
-### Favorites `Julia` - done
+### Favorites `Julia` ✅
 
-recipe: ObjectId, ref: ‚Favorite‘, required
-user: ObjectId, ref: 'User', required
-(timestamps: true)
+- recipe: ObjectId, ref: ‚Favorite‘, required
+- user: ObjectId, ref: 'User', required
+  (timestamps: true)
 
 ---
 
