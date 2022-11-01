@@ -1,4 +1,4 @@
-# LEMONGRAPP – Alkaline Food App
+# LemongrApp – Alkaline Food App
 
 An app that facilitates the alkaline lifestyle in everyday life. Users can create a collection of their favorite recipes, tips and lifehacks.
 
@@ -75,9 +75,10 @@ GET - '/recipes/:id' - Load single recipe
 
 POST - '/recipe/:id/favorite' - Favorite recipe with id
 
-POST - '/recipe/:id/defavorite' - Defavorite recipe with id
+POST - '/recipe/:id/unfavorite' - Unfavorite recipe with id
 
 `Julia`
+
 GET - '/favorites/- Load favorites, render favorites page (route guard middleware)
 
 ## Models
@@ -94,14 +95,14 @@ picture: String
 category: String, required
 picture: String
 title: String
-ingredients: string (wenn array, könnten menschen nach zutaten suchen?)
+ingredients: string
 instructions: string
 
 ### Favorites `Julia` ✅
 
-recipe: ObjectId, ref: ‚Favorite‘, required
-user: ObjectId, ref: 'User', required
-(timestamps: true)
+- recipe: ObjectId, ref: ‚Favorite‘, required
+- user: ObjectId, ref: 'User', required
+  (timestamps: true)
 
 ## Wishlist
 
