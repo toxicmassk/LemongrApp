@@ -72,14 +72,14 @@ GET - '/recipes/snacks‘ - Load all breakfast recipes
 GET - '/recipes/drinks‘ - Load all breakfast recipes
 
 GET - '/recipes/:id' - Load single recipe
-
 POST - '/recipe/:id/favorite' - Favorite recipe with id
-
-POST - '/recipe/:id/unfavorite' - Unfavorite recipe with id
+POST - '/recipe/:id/defavorite' - Defavorite recipe with id
 
 `Julia`
 
 GET - '/favorites/- Load favorites, render favorites page (route guard middleware)
+POST - '/recipe/:id/favorite' - Handle favorites form submission
+POST - '/recipe/:id/unfavorite' - Unfavorite recipe with id
 
 ## Models
 
@@ -104,6 +104,8 @@ instructions: string
 - user: ObjectId, ref: 'User', required
   (timestamps: true)
 
+---
+
 ## Wishlist
 
 ### Pages
@@ -123,9 +125,3 @@ users can searches recipes by individual ingredients (that they have)
 users can post own recipes that fit the alkaline criteria (filter)
 
 ---
-
-## To Do Julia:
-
-- private hbs changed into account hbs ( alles veraendern )
-- sign-in = Log-in
-- sign-up = create-account
