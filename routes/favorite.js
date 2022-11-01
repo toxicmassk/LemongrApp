@@ -10,8 +10,8 @@ const User = require('./../models/user');
 const favoriteRouter = express.Router();
 
 favoriteRouter.get('/', routeGuardMiddleware, (req, res, next) => {
-  Recipe.find()
-    .then((favorite) => {
+  Favorite.find({ user: req.user._id })
+    .then((favorites) => {
       res.render('favorites/favorite', { favorite });
     })
     .catch((error) => {
@@ -65,14 +65,14 @@ favoriteRouter.get('/:id', (req, res, next) => {
 });
 
 // Post requests for favorite recipe
-favoriteRouter.post('/:id', routeGuardMiddleware, (req, res, next) => {
-  const { id } = req.params;
+favoriteRouter.post('/:recipeId', routeGuardMiddleware, (req, res, next) => {
+  const { recipeId } = req.params;
   Favorite.create({
     user: req.user._id,
-    recipe: id //
+    recipe: recipeId
   })
     .then(() => {
-      res.redirect(`/favorite/${id}`); // maybe change redirection
+      res.redirect(`/`); // maybe change redirection
     })
     .catch((error) => {
       next(error);
@@ -81,16 +81,16 @@ favoriteRouter.post('/:id', routeGuardMiddleware, (req, res, next) => {
 
 // Post request for unfavorite recipe
 favoriteRouter.post(
-  '/:id/unfavorite',
+  '/:recipeId/unfavorite',
   routeGuardMiddleware,
   (req, res, next) => {
-    const { id } = req.params;
+    const { recipeId } = req.params;
     Favorite.findOneAndDelete({
       user: req.user._id,
-      recipe: id
+      recipe: recipeId
     })
       .then(() => {
-        res.redirect(`/favorite/${id}`); // maybe change redirection
+        res.redirect(`/`); // maybe change redirection
       })
       .catch((error) => {
         next(error);
