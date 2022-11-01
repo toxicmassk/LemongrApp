@@ -6,8 +6,10 @@ const Recipe = require('../models/recipe');
 
 const router = new Router();
 
+const routeGuard = require('./../middleware/route-guard');
+
 // All recipe categories
-router.get('/', (req, res, next) => {
+router.get('/', routeGuard, (req, res, next) => {
   Recipe.find()
     .then((recipes) => {
       res.render('recipes/recipes', { recipes });
@@ -18,7 +20,7 @@ router.get('/', (req, res, next) => {
 });
 
 // Each category with its recipes
-router.get('/category', (req, res, next) => {
+router.get('/category', routeGuard, (req, res, next) => {
   Recipe.find()
     .then((recipes) => {
       res.render('recipes/category', { recipes });
@@ -41,7 +43,7 @@ router.get('/category', (req, res, next) => {
 */
 
 // Single recipe
-router.get('/category/:id', (req, res, next) => {
+router.get('/category/:id', routeGuard, (req, res, next) => {
   const id = req.params.id;
   Recipe.findById(id)
     .then((recipe) => {
