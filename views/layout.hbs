@@ -10,9 +10,8 @@
   </head>
   <body>
     <nav>
-      <a href="/">Home</a>
+      <a href="/account">Your account</a>
       {{#if user}}
-        <a href="/private">{{user.name}}'s Profile</a>
         <form action="/authentication/log-out" method="POST">
           <button>Log out</button>
         </form>
