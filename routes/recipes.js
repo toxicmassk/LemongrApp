@@ -10,74 +10,16 @@ const routeGuard = require('./../middleware/route-guard');
 
 // All recipe categories
 router.get('/', routeGuard, (req, res, next) => {
-  Recipe.find()
+  // Perform some checks on some variables that could be there or not -> The query params
+  const { category } = req.query;
+  console.log('THIS IS THE CATEGORY: ', category);
+  Recipe.find({ category })
     .then((recipes) => {
+      // console.log(recipes);
       res.render('recipes/recipes', { recipes });
     })
     .catch((error) => {
-      res.redirect('/');
-    });
-});
-
-// Each category with its recipes
-router.get('/category/breakfast', routeGuard, (req, res, next) => {
-  //  Recipe.find({ category: { $all: ['breakfast'] } })
-  Recipe.find()
-    .then((recipes) => {
-      res.render('recipes/categories/breakfast', { recipes });
-    })
-    .catch((error) => {
-      res.redirect('/recipes');
-    });
-});
-
-router.get('/category/lunch', routeGuard, (req, res, next) => {
-  Recipe.find()
-    .then((recipes) => {
-      res.render('recipes/categories/lunch', { recipes });
-    })
-    .catch((error) => {
-      res.redirect('/recipes');
-    });
-});
-
-router.get('/category/dinner', routeGuard, (req, res, next) => {
-  Recipe.find()
-    .then((recipes) => {
-      res.render('recipes/categories/dinner', { recipes });
-    })
-    .catch((error) => {
-      res.redirect('/recipes');
-    });
-});
-
-router.get('/category/snacks', routeGuard, (req, res, next) => {
-  Recipe.find()
-    .then((recipes) => {
-      res.render('recipes/categories/snacks', { recipes });
-    })
-    .catch((error) => {
-      res.redirect('/recipes');
-    });
-});
-
-router.get('/category/sweets', routeGuard, (req, res, next) => {
-  Recipe.find()
-    .then((recipes) => {
-      res.render('recipes/categories/sweets', { recipes });
-    })
-    .catch((error) => {
-      res.redirect('/recipes');
-    });
-});
-
-router.get('/category/drinks', routeGuard, (req, res, next) => {
-  Recipe.find()
-    .then((recipes) => {
-      res.render('recipes/categories/drinks', { recipes });
-    })
-    .catch((error) => {
-      res.redirect('/recipes');
+      next(error);
     });
 });
 

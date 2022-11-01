@@ -1,25 +1,33 @@
 <h1>All recipe categories</h1>
 
 <div>
-  <a href="/recipes/category/breakfast">
+  <a href="/recipes?category=Breakfast">
     <button>Breakfast</button>
   </a>
-  <a href="/recipes/category/lunch">
+  <a href="/recipes?category=Lunch">
     <button>Lunch</button>
   </a>
-  <a href="/recipes/category/dinner">
+  <a href="/recipes?category=Dinner">
     <button>Dinner</button>
   </a>
-  <a href="/recipes/category/snacks">
+  <a href="/recipes?category=Snacks">
     <button>Snacks</button>
   </a>
-  <a href="/recipes/category/sweets">
+  <a href="/recipes?category=Sweets">
     <button>Sweets</button>
   </a>
-  <a href="/recipes/category/drinks">
+  <a href="/recipes?category=Drinks">
     <button>Drinks</button>
   </a>
 </div>
+
+{{#each recipes}}
+
+  <div>
+    {{this.title}}
+  </div>
+
+{{/each}}
 
 {{!--
 <div>
