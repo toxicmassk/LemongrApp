@@ -20,13 +20,64 @@ router.get('/', routeGuard, (req, res, next) => {
 });
 
 // Each category with its recipes
-router.get('/category/:breakfast', routeGuard, (req, res, next) => {
+router.get('/category/breakfast', routeGuard, (req, res, next) => {
+  //  Recipe.find({ category: { $all: ['breakfast'] } })
   Recipe.find()
     .then((recipes) => {
-      res.render('recipes/categories/breakfast/:id', { recipes });
+      res.render('recipes/categories/breakfast', { recipes });
     })
     .catch((error) => {
-      res.redirect('/recipes/category');
+      res.redirect('/recipes');
+    });
+});
+
+router.get('/category/lunch', routeGuard, (req, res, next) => {
+  Recipe.find()
+    .then((recipes) => {
+      res.render('recipes/categories/lunch', { recipes });
+    })
+    .catch((error) => {
+      res.redirect('/recipes');
+    });
+});
+
+router.get('/category/dinner', routeGuard, (req, res, next) => {
+  Recipe.find()
+    .then((recipes) => {
+      res.render('recipes/categories/dinner', { recipes });
+    })
+    .catch((error) => {
+      res.redirect('/recipes');
+    });
+});
+
+router.get('/category/snacks', routeGuard, (req, res, next) => {
+  Recipe.find()
+    .then((recipes) => {
+      res.render('recipes/categories/snacks', { recipes });
+    })
+    .catch((error) => {
+      res.redirect('/recipes');
+    });
+});
+
+router.get('/category/sweets', routeGuard, (req, res, next) => {
+  Recipe.find()
+    .then((recipes) => {
+      res.render('recipes/categories/sweets', { recipes });
+    })
+    .catch((error) => {
+      res.redirect('/recipes');
+    });
+});
+
+router.get('/category/drinks', routeGuard, (req, res, next) => {
+  Recipe.find()
+    .then((recipes) => {
+      res.render('recipes/categories/drinks', { recipes });
+    })
+    .catch((error) => {
+      res.redirect('/recipes');
     });
 });
 
@@ -53,38 +104,5 @@ router.get('/category/:id', routeGuard, (req, res, next) => {
       res.redirect('/recipes/category');
     });
 });
-
-/* OR...?
-router.get('/category', (req, res, next) => {
-  Recipe.find({category: 'breakfast'})
-    .then((recipes) => {
-      res.render('recipes/category/breakfast', { recipes });
-    })
-    .catch((error) => {
-      res.redirect('/');
-    });
-});
-
-
-router.get('/breakfast', (req, res, next) => {
-  res.render('recipes/breakfast');
-});
-
-router.get('/lunch', (req, res, next) => {
-  res.render('recipes/lunch');
-});
-
-router.get('/dinner', (req, res, next) => {
-  res.render('recipes/dinner');
-});
-
-router.get('/snacks', (req, res, next) => {
-  res.render('recipes/snacks');
-});
-
-router.get('/drinks', (req, res, next) => {
-  res.render('recipes/drinks');
-});
-*/
 
 module.exports = router;
