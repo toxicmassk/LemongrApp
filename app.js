@@ -3,6 +3,7 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
+const hbs = require('hbs');
 const path = require('path');
 const express = require('express');
 const createError = require('http-errors');
@@ -22,6 +23,8 @@ const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+hbs.registerPartials(__dirname + '/views/partials');
 
 app.use(serveFavicon(path.join(__dirname, 'public/images', 'favicon.ico')));
 app.use(

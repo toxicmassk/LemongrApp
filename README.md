@@ -19,19 +19,11 @@ Account - Allows user to navigate through the app, all the links
 Favorites - Allows User to check their favorite links (display list of recipes favorited by user)
 
 Alkaline Food - links to the recipes (Breakfast, Lunch, Dinner, Snacks, Sweets,
-Drinks)
+Drinks) ✅
 
-Breakfast recipes - shows user variation of recipes
+Recipe categories - shows user all recipes of one category ✅
 
-Lunch recipes - shows user variation of recipes
-
-Dinner recipes - shows user variation of recipes
-
-Snacks recipes - shows user variation of recipes
-
-Sweets recipes - shows user variation of recipes
-
-Drinks recipes - shows user variation of recipes
+Single recipe - shows user one recipe ✅, user can toggle favorite button
 
 ## Route Handlers
 
@@ -57,29 +49,29 @@ POST - '/account/delete' - Handle profile deletion form submission
 
 POST - '/log-out' - Handles log-out Submission - done
 
-`Wibi`
+`Wibi` ✅
 
 GET - '/recipes' - Load all recipe categories
 
-GET - '/recipes/breakfast‘ - Load all breakfast recipes
+GET - '/recipes/category - Load all categories of recipes
 
-GET - '/recipes/lunch‘ - Load all breakfast recipes
+GET - '/recipes/category?category=NameOfCategory - Load all recipes of one category
 
-GET - '/recipes/dinner‘ - Load all breakfast recipes
-
-GET - '/recipes/snacks‘ - Load all breakfast recipes
-
-GET - '/recipes/drinks‘ - Load all breakfast recipes
-
-GET - '/recipes/:id' - Load single recipe
-POST - '/recipe/:id/favorite' - Favorite recipe with id
-POST - '/recipe/:id/defavorite' - Defavorite recipe with id
+GET - '/category/:id' - Load single recipe
 
 `Julia`
 
 GET - '/favorites/- Load favorites, render favorites page (route guard middleware)
+
 POST - '/recipe/:id/favorite' - Handle favorites form submission
+
 POST - '/recipe/:id/unfavorite' - Unfavorite recipe with id
+
+## Partials
+
+`Wibi` ✅
+
+categoryPartial
 
 ## Models
 

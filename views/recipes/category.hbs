@@ -1,17 +1,15 @@
-<h1>Each category with its recipes</h1>
+<h1>Why is te category not shown?</h1>
+<h1>{{recipes.category}}</h1>
+<h1>{{recipe.category}}</h1>
+<h1>{{category}}</h1>
 
-<h1>Category{{category}}</h1>
-
+<div>
 <ul>
   {{#each recipes}}
-    <li>
-      <a href="/recipes/category/{{_id}}">
-        <img src="{{picture}}" alt="{{title}}" />
-        <h5>{{title}}</h5>
-      </a>
-    </li>
+    {{> categoryPartial}}
   {{/each}}
 </ul>
+</div>
 
 <h3><i>
     <a href="/recipes">Go back</a>

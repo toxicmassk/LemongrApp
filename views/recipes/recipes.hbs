@@ -1,29 +1,34 @@
 <h1>All recipe categories</h1>
 
+<form action="/recipes/search" method="GET">
+  <label>
+    What's cookin'?
+    <input
+      type="text"
+      placeholder=" Search by ingredient"
+      name="search-ingredients"
+    />
+    <button type="submit">Search</button>
+  </label>
+</form>
+
 <div>
-  <a href="/recipes?category=Breakfast">
+  <a href="/recipes/category?category=Breakfast">
     <button>Breakfast</button>
   </a>
-  <a href="/recipes?category=Lunch">
+  <a href="/recipes/category?category=Lunch">
     <button>Lunch</button>
   </a>
-  <a href="/recipes?category=Dinner">
+  <a href="/recipes/category?category=Dinner">
     <button>Dinner</button>
   </a>
-  <a href="/recipes?category=Snacks">
+  <a href="/recipes/category?category=Snacks">
     <button>Snacks</button>
   </a>
-  <a href="/recipes?category=Sweets">
+  <a href="/recipes/category?category=Sweets">
     <button>Sweets</button>
   </a>
-  <a href="/recipes?category=Drinks">
+  <a href="/recipes/category?category=Drinks">
     <button>Drinks</button>
   </a>
 </div>
-{{#each recipes}}
-
-  <div>
-    {{this.title}}
-  </div>
-
-{{/each}}
