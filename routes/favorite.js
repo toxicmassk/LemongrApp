@@ -15,10 +15,14 @@ favoriteRouter.get('/', routeGuardMiddleware, (req, res, next) => {
       res.render('favorites/favorite', { favorite });
     })
     .catch((error) => {
-      res.redirect('/');
+      res.redirect('/recipes');
     });
 });
 
+// Find on favorites method, pass an object to filter results! User.id o
+// Req.user_id
+
+/*
 // get favorite, not sure if this is correct ..
 favoriteRouter.get('/:id', (req, res, next) => {
   const { id } = req.params;
@@ -46,7 +50,7 @@ favoriteRouter.get('/:id', (req, res, next) => {
     .then((favorite) => {
       // We're only evaluating the expression String(req.user._id) === id
       // if we know we have an authenticated user
-      const isOwnRecipe /* Profile*/ = req.favorite
+      const isOwnRecipe  = req.favorite
         ? String(req.recipe._id) === id
         : false;
       const recipesFavorites = favorite.map((favorite) =>
@@ -63,6 +67,7 @@ favoriteRouter.get('/:id', (req, res, next) => {
       next(error);
     });
 });
+*/
 
 // Post requests for favorite recipe
 favoriteRouter.post('/:recipeId', routeGuardMiddleware, (req, res, next) => {
