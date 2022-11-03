@@ -24,6 +24,10 @@ const recipeSchema = new mongoose.Schema(
     instruction: {
       type: String,
       required: true
+    },
+    alkalinefood: {
+      type: [String],
+      required: true
     }
   },
   { timestamps: true }
