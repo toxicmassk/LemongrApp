@@ -6,7 +6,8 @@ const selfcareSchema = new mongoose.Schema(
   {
     category: {
       type: String,
-      required: true
+      required: true,
+      enum: ['Breathing-excercise', 'Cosmetics', 'Bodycare']
     },
     picture: {
       type: String,
