@@ -27,7 +27,7 @@ router.get('/category', routeGuard, (req, res, next) => {
   Recipe.find({ category })
     .then((recipes) => {
       // console.log(recipes);
-      res.render('recipes/category', { recipes });
+      res.render('recipes/category', { recipes, categoryParent: category });
     })
     .catch((error) => {
       next(error);
@@ -48,10 +48,22 @@ router.get('/category/:id', routeGuard, (req, res, next) => {
 
 // Ingredients search
 router.get('/search', routeGuard, (req, res, next) => {
-  const { ingredients } = req.query;
-  Recipe.find({ ingredients }).then((recipes) => {
-    res.render('recipes/search', { recipes });
-  });
+  const { alkalinefood } = req.query;
+  Recipe.find({ alkalinefood })
+    .then((recipes) => {
+      res.render('recipes/search', {
+        recipes,
+        alkalinefoodParent: alkalinefood
+      });
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
+// Render list of alkaline food
+router.get('/food-list', routeGuard, (req, res, next) => {
+  res.render('recipes/food-list');
 });
 
 module.exports = router;

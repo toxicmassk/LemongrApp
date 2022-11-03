@@ -3,11 +3,15 @@
 <form action="/recipes/search" method="GET">
   <label>
     <h3> What's cookin'?</h3>
-    <input type="text" placeholder=" Search by ingredient" name="ingredients" />
+    <input
+      type="text"
+      placeholder=" Search by ingredient"
+      name="alkalinefood"
+    />
     <button type="submit">Search</button>
   </label>
-  <p>You don't know which ingredients are alkaline? Check recipes by
-    <a href="/info/food-list"><i>alkaline food list</i></a>http://www.alkaline-diet-health-tips.com/</p>
+  <p>You don't know which ingredients are alkaline? Check ingredients by
+    <a href="/recipes/food-list"><strong>Alkaline Food List</strong></a></p>
 </form>
 
 <div>
@@ -20,12 +24,14 @@
   <a href="/recipes/category?category=Dinner">
     <button>Dinner</button>
   </a>
+  {{!
   <a href="/recipes/category?category=Snacks">
     <button>Snacks</button>
   </a>
   <a href="/recipes/category?category=Sweets">
     <button>Sweets</button>
   </a>
+  }}
   <a href="/recipes/category?category=Drinks">
     <button>Drinks</button>
   </a>
