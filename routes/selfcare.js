@@ -8,7 +8,7 @@ const router = new Router();
 
 const routeGuard = require('./../middleware/route-guard');
 
-// All recipe categories
+// All Selfcare categories
 router.get('/', routeGuard, (req, res, next) => {
   Selfcare.find()
     .then((selfcare) => {
@@ -19,43 +19,17 @@ router.get('/', routeGuard, (req, res, next) => {
     });
 });
 
-router.get('/selfcare/bodycare', routeGuard, (req, res, next) => {
-  Selfcare.find()
-    .then((selfcare) => {
-      res.render('selfcare/bodycare', { selfcare });
-    })
-    .catch((error) => {
-      res.redirect('/selfcare');
-    });
-});
-
-router.get('/selfcare/breathing-excersice', routeGuard, (req, res, next) => {
-  Selfcare.find()
+// Selfcare by categorie
+router.get('/category', routeGuard, (req, res, next) => {
+  // Perform some checks on some variables that could be there or not -> The query params
+  const { category } = req.query;
+  Selfcare.find({ category })
     .then((recipes) => {
-      res.render('selfcare/breathing-excersice', { selfcare });
+      // console.log(recipes);
+      res.render('selfcare/category', { selfcare });
     })
     .catch((error) => {
-      res.redirect('/selfcare');
-    });
-});
-
-router.get('/selfcare/cosmetics', routeGuard, (req, res, next) => {
-  Selfcare.find()
-    .then((selfcare) => {
-      res.render('selfcare/cosmetics', { selfcare });
-    })
-    .catch((error) => {
-      res.redirect('/selfcare');
-    });
-});
-
-router.get('/selfcare/yoga', routeGuard, (req, res, next) => {
-  Selfcare.find()
-    .then((selfcare) => {
-      res.render('selfcare/yoga', { selfcare });
-    })
-    .catch((error) => {
-      res.redirect('/selfcare');
+      next(error);
     });
 });
 
