@@ -20,11 +20,18 @@ router.get('/', routeGuard, (req, res, next) => {
 });
 
 // Ingredients search
+/*
 router.get('/search', (req, res, next) => {
   const { recipeId } = req.query;
   Recipe.find({ recipeId }).then((recipes) => {
     res.render('search', { recipes });
   });
+});
+*/
+
+router.get('/search/', (req, res, next) => {
+  const { ingredients } = req.query;
+  res.render('search', { ingredients });
 });
 
 // Recipes by categorie

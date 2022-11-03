@@ -1,15 +1,16 @@
 <h3>Your ingredients search result</h3>
 
-<ul>
+{{!suche nach ingredient hat stattgefunden, hier muss der link hin, der das REZEPT rendert}}
+<div><ul>
   {{#each recipes}}
     <li>
-      <a href="/recipes/ingredients?{{ingredients}}">
-
+      <a href="/recipes/single-recipe">
+      {{> categoryPartial}}
       </a>
     </li>
   {{/each}}
 </ul>
-
+</div>
 <h3>
   <i>
     <a href="/recipes">Go back</a>
