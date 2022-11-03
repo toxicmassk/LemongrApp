@@ -19,21 +19,6 @@ router.get('/', routeGuard, (req, res, next) => {
     });
 });
 
-// Ingredients search
-/*
-router.get('/search', (req, res, next) => {
-  const { recipeId } = req.query;
-  Recipe.find({ recipeId }).then((recipes) => {
-    res.render('search', { recipes });
-  });
-});
-*/
-
-router.get('/search/', (req, res, next) => {
-  const { ingredients } = req.query;
-  res.render('search', { ingredients });
-});
-
 // Recipes by categorie
 router.get('/category', routeGuard, (req, res, next) => {
   // Perform some checks on some variables that could be there or not -> The query params
@@ -59,6 +44,14 @@ router.get('/category/:id', routeGuard, (req, res, next) => {
     .catch((error) => {
       next(error);
     });
+});
+
+// Ingredients search
+router.get('/search', routeGuard, (req, res, next) => {
+  const { ingredients } = req.query;
+  Recipe.find({ ingredients }).then((recipes) => {
+    res.render('recipes/search', { recipes });
+  });
 });
 
 module.exports = router;

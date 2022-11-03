@@ -1,0 +1,20 @@
+<h2>That's what's gonna cook!</h2>
+
+<div>
+  <ul>
+    {{#each recipes}}
+      <li>
+        <a href="/recipes/category/{{_id}}">
+          <h2>{{title}}</h2>
+          <img src="{{picture}}" alt="{{title}}" />
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
+<h3>
+  <i>
+    <a href="/recipes">Go back</a>
+  </i>
+</h3>
