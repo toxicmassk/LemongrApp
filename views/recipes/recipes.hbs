@@ -6,6 +6,9 @@
     <input type="text" placeholder="Search by ingredient" name="alkalinefood" />
     <button type="submit">Search</button>
   </label>
+  {{#if noRecipes}}
+    <p class="error">{{error}}</p>
+  {{/if}}
   <p>You don't know which ingredients are alkaline? Check ingredients by
     <a href="/recipes/food-list"><strong>Alkaline Food List</strong></a></p>
 </form>

@@ -10,15 +10,16 @@ router.get('/', (req, res, next) => {
   res.render('home', { title: 'Welcome!' });
 });
 
-router.get('/account', routeGuard, (req, res, next) => {
-  res.render('account/account');
-});
-
 // Lemonphrase
 router.get('/account', routeGuard, (req, res, next) => {
-  Lemonphrase.find()
-    .then((phrase) => {
-      res.render('account', { phraseParent: phrase });
+  Lemonphrase.count()
+    .then((count) => {
+      const random = Math.floor(Math.random * count);
+      return Lemonphrase.findOne();
+    })
+    .then((randomPhrase) => {
+      console.log(randomPhrase);
+      res.render('account/account', { phrase: randomPhrase.phrase });
     })
     .catch((error) => {
       next(error);

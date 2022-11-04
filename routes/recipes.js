@@ -55,8 +55,11 @@ router.get('/search', routeGuard, (req, res, next) => {
         recipes,
         alkalinefoodParent: alkalinefood
       });
-      if (!alkalinefood) {
-        res.send('This might not be alkaline');
+      if (!alkalinefood || recipes.length <= 0) {
+        res.render('recipes/recipes', {
+          noRecipes: true,
+          error: 'This might not be alkaline'
+        });
       }
     })
     .catch((error) => {

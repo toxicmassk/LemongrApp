@@ -86,4 +86,10 @@ label {
   margin-bottom: 0.5em;
 }
 
+.error {
+  padding: 1em;
+  background-color: #ff3f3f;
+  color: white;
+}
+
 /*# sourceMappingURL=style.css.map */
