@@ -15,11 +15,10 @@ router.get('/account', routeGuard, (req, res, next) => {
 });
 
 // Lemonphrase
-router.post('/account', routeGuard, (req, res, next) => {
-  const { phrase } = req.query;
+router.get('/account', routeGuard, (req, res, next) => {
   Lemonphrase.find()
     .then((phrase) => {
-      res.send({ phrase });
+      res.render('account', { phraseParent: phrase });
     })
     .catch((error) => {
       next(error);
