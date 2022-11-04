@@ -11,7 +11,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/account', routeGuard, (req, res, next) => {
-  res.render('account');
+  res.render('account/account');
 });
 
 // Lemonphrase

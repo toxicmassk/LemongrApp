@@ -11,10 +11,13 @@ const favoriteRouter = express.Router();
 
 favoriteRouter.get('/', routeGuardMiddleware, (req, res, next) => {
   Favorite.find({ user: req.user._id })
+    .populate('recipe')
     .then((favorites) => {
-      res.render('favorites/favorite', { favorite });
+      console.log('favorites', { favorites });
+      res.render('favorites/favorite', { favorites });
     })
     .catch((error) => {
+      console.log(error);
       res.redirect('/recipes');
     });
 });
@@ -77,7 +80,7 @@ favoriteRouter.post('/:recipeId', routeGuardMiddleware, (req, res, next) => {
     recipe: recipeId
   })
     .then(() => {
-      res.redirect(`/`); // maybe change redirection
+      res.redirect('/'); // maybe change redirection
     })
     .catch((error) => {
       next(error);
@@ -95,7 +98,7 @@ favoriteRouter.post(
       recipe: recipeId
     })
       .then(() => {
-        res.redirect(`/`); // maybe change redirection
+        res.redirect('/'); // maybe change redirection
       })
       .catch((error) => {
         next(error);

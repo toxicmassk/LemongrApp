@@ -2,5 +2,8 @@
   <a href="/recipes/category/{{_id}}">
     <h2>{{title}}</h2>
     <img src="{{picture}}" alt="{{title}}" />
+    <form method="POST" action="/favorite/{{_id}}">
+      <button type="submit">small heart</button>
+    </form>
   </a>
 </li>

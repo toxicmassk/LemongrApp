@@ -26,7 +26,7 @@ router.get('/category', routeGuard, (req, res, next) => {
   console.log('THIS IS THE CATEGORY: ', category);
   Recipe.find({ category })
     .then((recipes) => {
-      // console.log(recipes);
+      //console.log({ recipes, categoryParent: category });
       res.render('recipes/category', { recipes, categoryParent: category });
     })
     .catch((error) => {
