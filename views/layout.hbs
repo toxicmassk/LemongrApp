@@ -10,10 +10,10 @@
   </head>
   <body>
     <nav>
-      <a href="/account">Your account</a>
       {{#if user}}
         <form action="/authentication/log-out" method="POST">
           <button>Log out</button>
+          <a href="/account">Your account</a>
         </form>
       {{else}}
         <a href="/authentication/create-account">Create account</a>
