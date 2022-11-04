@@ -19,7 +19,7 @@ router.get('/', routeGuard, (req, res, next) => {
     });
 });
 
-// Recipes by categorie
+// Recipes by category
 router.get('/category', routeGuard, (req, res, next) => {
   // Perform some checks on some variables that could be there or not -> The query params
   const { category } = req.query;
@@ -55,6 +55,9 @@ router.get('/search', routeGuard, (req, res, next) => {
         recipes,
         alkalinefoodParent: alkalinefood
       });
+      if (!alkalinefood) {
+        res.send('This might not be alkaline');
+      }
     })
     .catch((error) => {
       next(error);
