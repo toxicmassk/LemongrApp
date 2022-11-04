@@ -15,7 +15,7 @@ router.get('/', routeGuard, (req, res, next) => {
       res.render('selfcare/selfcare', { selfcare });
     })
     .catch((error) => {
-      res.redirect('/');
+      next(error);
     });
 });
 
@@ -24,9 +24,9 @@ router.get('/category', routeGuard, (req, res, next) => {
   // Perform some checks on some variables that could be there or not -> The query params
   const { category } = req.query;
   Selfcare.find({ category })
-    .then((recipes) => {
+    .then((selfcare) => {
       // console.log(recipes);
-      res.render('selfcare/category', { selfcare });
+      res.render('selfcare/category', { selfcare, categoryParent: category });
     })
     .catch((error) => {
       next(error);
