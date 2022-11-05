@@ -67,4 +67,14 @@ router.post('/log-out', (req, res, next) => {
   res.redirect('/');
 });
 
+router.post('/delete', (req, res, next) => {
+  User.findByIdAndDelete(req.user._id)
+    .then(() => {
+      res.redirect('/');
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
 module.exports = router;

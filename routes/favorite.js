@@ -25,53 +25,6 @@ favoriteRouter.get('/', routeGuardMiddleware, (req, res, next) => {
 // Find on favorites method, pass an object to filter results! User.id o
 // Req.user_id
 
-/*
-// get favorite, not sure if this is correct ..
-favoriteRouter.get('/:id', (req, res, next) => {
-  const { id } = req.params;
-  let recipe, favorite;
-  Recipe.findById(id)
-    .then((recipeDocument) => {
-      recipe = recipeDocument;
-      return Favorite.find({
-        recipe: id
-      })
-        .sort({ createdAt: -1 })
-        .populate('recipe');
-    })
-    .then((favoriteDocuments) => {
-      favorite = favoriteDocuments;
-      if (req.recipe) {
-        return Favorite.findOne({
-          user: req.user._id,
-          recipe: id
-        });
-      } else {
-        return null;
-      }
-    })
-    .then((favorite) => {
-      // We're only evaluating the expression String(req.user._id) === id
-      // if we know we have an authenticated user
-      const isOwnRecipe  = req.favorite
-        ? String(req.recipe._id) === id
-        : false;
-      const recipesFavorites = favorite.map((favorite) =>
-        favorite.getAddedInformation(req.recipe ? req.recipe._id : null)
-      );
-      res.render('recipe/detail', {
-        account: user,
-        recipe: recipesFavorites,
-        favorite,
-        isOwnRecipe
-      });
-    })
-    .catch((error) => {
-      next(error);
-    });
-});
-*/
-
 // Post requests for favorite recipe
 favoriteRouter.post('/:recipeId', routeGuardMiddleware, (req, res, next) => {
   const { recipeId } = req.params;
@@ -86,7 +39,6 @@ favoriteRouter.post('/:recipeId', routeGuardMiddleware, (req, res, next) => {
       next(error);
     });
 });
-
 // Post request for unfavorite recipe
 favoriteRouter.post(
   '/:recipeId/unfavorite',
@@ -106,6 +58,26 @@ favoriteRouter.post(
   }
 );
 
-// This section needs to be written new above
+/*
+
+/ POST - '/:id/delete' - Handle publication delete form submission.
+publicationRouter.post(
+  '/:id/delete',
+  routeGuardMiddleware,
+  (req, res, next) => {
+    const { id } = req.params;
+    // We should prevent users from deleting
+    // publications for which they are not the author
+    Publication.findByIdAndDelete(id)
+      .then(() => {
+        // Pseudo-code to delete image from database
+        // cloudinary.v2.delete(publication.picture);
+        res.redirect('/');
+      })
+      .catch((error) => {
+        next(error);
+      });
+  }
+);*/
 
 module.exports = favoriteRouter;
