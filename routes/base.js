@@ -10,12 +10,12 @@ router.get('/', (req, res, next) => {
   res.render('home', { title: 'Welcome!' });
 });
 
-// Lemonphrase
+// Render /account & Lemonphrase
 router.get('/account', routeGuard, (req, res, next) => {
   Lemonphrase.count()
     .then((count) => {
-      const random = Math.floor(Math.random * count);
-      return Lemonphrase.findOne();
+      const random = Math.floor(Math.random() * count);
+      return Lemonphrase.findOne().skip(random);
     })
     .then((randomPhrase) => {
       console.log(randomPhrase);

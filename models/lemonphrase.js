@@ -7,6 +7,10 @@ const lemonphraseSchema = new mongoose.Schema(
     phrase: {
       type: String,
       required: true
+    },
+    image: {
+      type: String,
+      required: true
     }
   },
   { timestamps: true }
