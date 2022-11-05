@@ -1,6 +1,7 @@
 'use strict';
 
 const { Router } = require('express');
+const Favorite = require('../models/favorite');
 
 const Recipe = require('../models/recipe');
 
@@ -21,13 +22,50 @@ router.get('/', routeGuard, (req, res, next) => {
 
 // Recipes by category
 router.get('/category', routeGuard, (req, res, next) => {
+  let recipesFromDb;
   // Perform some checks on some variables that could be there or not -> The query params
   const { category } = req.query;
   console.log('THIS IS THE CATEGORY: ', category);
   Recipe.find({ category })
     .then((recipes) => {
       //console.log({ recipes, categoryParent: category });
-      res.render('recipes/category', { recipes, categoryParent: category });
+      recipesFromDb = recipes;
+      return Favorite.find({ user: req.user._id });
+    })
+    .then((favorites) => {
+      console.log('FAVORITES: ', favorites);
+      const jointFavorites = favorites.join('');
+      console.log('JOINT FAVORITES: ', jointFavorites);
+      const recipesToRender = recipesFromDb.map((recipe) => {
+        if (jointFavorites.includes(recipe._id)) {
+          return {
+            _id: recipe._id,
+            category: recipe.category,
+            title: recipe.title,
+            picture: recipe.picture,
+            ingredients: recipe.ingredients,
+            instruction: recipe.instruction,
+            alkalinefood: recipe.alkalinefood,
+            favorited: true
+          };
+        } else {
+          return {
+            _id: recipe._id,
+            category: recipe.category,
+            title: recipe.title,
+            picture: recipe.picture,
+            ingredients: recipe.ingredients,
+            instruction: recipe.instruction,
+            alkalinefood: recipe.alkalinefood,
+            favorited: false
+          };
+        }
+      });
+      // console.log(recipesToRender);
+      res.render('recipes/category', {
+        recipesToRender,
+        categoryParent: category
+      });
     })
     .catch((error) => {
       next(error);
