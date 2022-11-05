@@ -26,8 +26,11 @@ const recipeSchema = new mongoose.Schema(
       required: true
     },
     alkalinefood: {
-      type: [String],
-      required: true
+      type: [String]
+    },
+    author: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
     }
   },
   { timestamps: true }

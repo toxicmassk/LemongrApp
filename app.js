@@ -19,6 +19,7 @@ const authenticationRouter = require('./routes/authentication');
 const recipesRouter = require('./routes/recipes');
 const favoriteRouter = require('./routes/favorite');
 const selfcareRouter = require('./routes/selfcare');
+const publicationRouter = require('./routes/publication');
 
 const app = express();
 
@@ -65,6 +66,7 @@ app.use('/authentication', authenticationRouter);
 app.use('/recipes', recipesRouter);
 app.use('/favorite', favoriteRouter);
 app.use('/selfcare', selfcareRouter);
+app.use('/create', publicationRouter);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {
