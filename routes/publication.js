@@ -46,4 +46,9 @@ publicationRouter.post(
   }
 );
 
+// Render recipes published by user
+publicationRouter.get('/create/published', routeGuard, (req, res, next) => {
+  res.render('recipes/user-recipes');
+});
+
 module.exports = publicationRouter;
