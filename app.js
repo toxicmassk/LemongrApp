@@ -62,11 +62,11 @@ app.use(
 app.use(authenticationDeserializer);
 
 app.use('/', baseRouter);
+app.use('/create', publicationRouter);
 app.use('/authentication', authenticationRouter);
 app.use('/recipes', recipesRouter);
 app.use('/favorite', favoriteRouter);
 app.use('/selfcare', selfcareRouter);
-app.use('/create', publicationRouter);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {

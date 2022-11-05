@@ -6,35 +6,35 @@
   <a href="/recipes/food-list"> <strong>alkaline food list</strong></a>!</p>
 
 
-<form method="POST" action="/recipes/create" enctype="multipart/form-data">
+<form method="POST" action="/create">
 
-<label for="input-category">Food category:</label>
+<label for="input-category">What kind of food?</label>
 <div>
-<input class="input-breakfast" type="radio" name="breakfast" value="breakfast"/>
+<input class="input-breakfast" type="radio" name="category" value="Breakfast"/>
 <label for="input-breakfast">Breakfast</label>
 </div>
 <div>
-<input class="input-lunch" type="radio" name="lunch" value="lunch"/>
+<input class="input-lunch" type="radio" name="category" value="Lunch"/>
 <label for="input-lunch">Lunch</label>
 </div>
 <div>
-<input class="input-dinner" type="radio" name="dinner" value="dinner"/>
+<input class="input-dinner" type="radio" name="category" value="Dinner"/>
 <label for="input-dinner">Dinner</label>
 </div>
 <div>
-<input class="input-drinks" type="radio" name="drinks" value="drinks"/>
+<input class="input-drinks" type="radio" name="category" value="Drinks"/>
 <label for="input-drinks">Drinks</label>
 </div>
 
-<label for="input-picture">Upload a picture of the recipe</label>
-<input id="input-picture" type="file" name="picture"/>
+{{!-- <label for="input-picture">Upload a picture of the dish</label>
+<input id="input-picture" type="file" name="picture"/> --}}
 
 <input id="input-title" type="text" placeholder="Title of the recipe" name="title" minlength='2' maxlength="15" />
 
 <input id="input-ingredients" type="text" placeholder="Ingredients of the recipe" name="ingredients"/>
 
-<input id="input-instruction" type="textarea" placeholder="Instruction for the recipe" name="instruction"/>
-
+<textarea id="input-instruction" placeholder="Instruction for the recipe" name="instruction">
+</textarea>
 <p>Everything right?</p>
 <button>Then publish</button>
 </form>

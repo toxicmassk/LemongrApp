@@ -7,11 +7,13 @@ const recipeSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
-      enum: ['Breakfast', 'Lunch', 'Dinner', 'Snacks', 'Sweets', 'Drinks']
+      enum: ['Breakfast', 'Lunch', 'Dinner', 'Drinks']
     },
     picture: {
       type: String,
-      required: true
+      default:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/P1030323.JPG/330px-P1030323.JPG'
+      // required: true
     },
     title: {
       type: String,
@@ -30,7 +32,8 @@ const recipeSchema = new mongoose.Schema(
     },
     author: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'User'
+      ref: 'User',
+      required: true
     }
   },
   { timestamps: true }

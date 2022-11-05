@@ -5,7 +5,7 @@ const publicationRouter = express.Router();
 const multer = require('multer');
 const cloudinary = require('cloudinary');
 const multerStorageCloudinary = require('multer-storage-cloudinary');
-const Publication = require('./../models/recipe');
+const Recipe = require('./../models/recipe');
 const routeGuard = require('./../middleware/route-guard');
 
 const storage = new multerStorageCloudinary.CloudinaryStorage({
@@ -15,30 +15,34 @@ const storage = new multerStorageCloudinary.CloudinaryStorage({
 const upload = multer({ storage: storage });
 
 // Render recipes create page
-publicationRouter.get('/create', routeGuard, (req, res, next) => {
+publicationRouter.get('/', routeGuard, (req, res, next) => {
   res.render('recipes/new-recipe');
 });
 
 // Create recipe
 publicationRouter.post(
-  '/create',
+  '/',
   routeGuard,
   upload.single('picture'),
   (req, res, next) => {
-    const url = req.file.path;
-    const { category, picture, title, ingredients, instruction, alkalinefood } =
-      req.body;
+    console.log('BODY: ', req.body);
+    // const url = req.file.path;
+    const { category, title, ingredients, instruction } = req.body;
     const author = req.user._id;
+    // if my ingredients string is 'egg, milk, flour' -> ['egg','milk','flour']
+    console.log('INGREDIENTS', ingredients);
+    const splittedIngrediends = ingredients.split(',');
     Recipe.create({
       category,
-      picture,
+      // picture: picture,
       title,
-      ingredients,
+      splittedIngrediends,
       instruction,
-      alkalinefood
+      author
     })
       .then((publication) => {
-        res.redirect('/recipes');
+        console.log(publication);
+        res.redirect(`/recipes/category/${publication._id}`);
       })
       .catch((error) => {
         next(error);
@@ -47,7 +51,7 @@ publicationRouter.post(
 );
 
 // Render recipes published by user
-publicationRouter.get('/create/published', routeGuard, (req, res, next) => {
+publicationRouter.get('/published', routeGuard, (req, res, next) => {
   res.render('recipes/user-recipes');
 });
 
