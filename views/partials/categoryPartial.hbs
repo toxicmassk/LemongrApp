@@ -1,9 +1,15 @@
-<li>
-  <a href="/recipes/category/{{_id}}">
+  
+  
+    <a href="/recipes/category/{{_id}}">
     <h2>{{title}}</h2>
     <img src="{{picture}}" alt="{{title}}" />
-    <form method="POST" action="/favorite/{{_id}}">
-      <button type="submit">small heart</button>
+    {{#if favorited}}
+    <form method="POST" action="/favorite/{{_id}}/unfavorite">
+      <input type="submit" value="Unfavorite" />
     </form>
-  </a>
-</li>
+    {{else}}
+    <form method="POST" action="/favorite/{{_id}}">
+      <button type="submit">Favorite</button>
+    </form>
+    {{/if}}
+ 

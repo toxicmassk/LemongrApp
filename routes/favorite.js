@@ -9,6 +9,7 @@ const User = require('./../models/user');
 
 const favoriteRouter = express.Router();
 
+// GET ALL FAVORITES LINKED WITH LOGGED-IN USER
 favoriteRouter.get('/', routeGuardMiddleware, (req, res, next) => {
   Favorite.find({ user: req.user._id })
     .populate('recipe')
@@ -25,21 +26,7 @@ favoriteRouter.get('/', routeGuardMiddleware, (req, res, next) => {
 // Find on favorites method, pass an object to filter results! User.id o
 // Req.user_id
 
-// Post requests for favorite recipe
-favoriteRouter.post('/:recipeId', routeGuardMiddleware, (req, res, next) => {
-  const { recipeId } = req.params;
-  Favorite.create({
-    user: req.user._id,
-    recipe: recipeId
-  })
-    .then(() => {
-      res.redirect('/'); // maybe change redirection
-    })
-    .catch((error) => {
-      next(error);
-    });
-});
-// Post request for unfavorite recipe
+// Delete request for unfavorite recipe
 favoriteRouter.post(
   '/:recipeId/unfavorite',
   routeGuardMiddleware,
@@ -50,12 +37,48 @@ favoriteRouter.post(
       recipe: recipeId
     })
       .then(() => {
-        res.redirect('/'); // maybe change redirection
+        res.redirect('/recipes'); // maybe change redirection
       })
       .catch((error) => {
         next(error);
       });
   }
 );
+
+// Post requests for favorite recipe
+favoriteRouter.post('/:recipeId', routeGuardMiddleware, (req, res, next) => {
+  const { recipeId } = req.params;
+  Favorite.findOne({
+    user: req.user._id,
+    recipe: recipeId
+  })
+    .then((favorite) => {
+      console.log('FAVORITE: ', favorite);
+      if (favorite) {
+        const error = new Error(
+          "You've already added a Favorite to this recipe!"
+        );
+        throw error;
+      } else {
+        return Favorite.create({
+          user: req.user._id,
+          recipe: recipeId
+        });
+      }
+    })
+    .then(() => {
+      res.redirect('/recipes'); // maybe change redirection
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
+//HTTP METHODS
+// GET - commonly used to fetch information from a server
+// POST - commonly used to post information to a server (e.g. create a new document in the database)
+// PUT - commonly used to edit information in the database
+// PATCH - similar to PUT
+// DELETE - commonly used to issue requests to the server in order to delete a document in the database
 
 module.exports = favoriteRouter;
