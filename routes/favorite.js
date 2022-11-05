@@ -58,26 +58,4 @@ favoriteRouter.post(
   }
 );
 
-/*
-
-/ POST - '/:id/delete' - Handle publication delete form submission.
-publicationRouter.post(
-  '/:id/delete',
-  routeGuardMiddleware,
-  (req, res, next) => {
-    const { id } = req.params;
-    // We should prevent users from deleting
-    // publications for which they are not the author
-    Publication.findByIdAndDelete(id)
-      .then(() => {
-        // Pseudo-code to delete image from database
-        // cloudinary.v2.delete(publication.picture);
-        res.redirect('/');
-      })
-      .catch((error) => {
-        next(error);
-      });
-  }
-);*/
-
 module.exports = favoriteRouter;
