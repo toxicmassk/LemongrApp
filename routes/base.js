@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
 router.get('/account', routeGuard, (req, res, next) => {
   Lemonphrase.count()
     .then((count) => {
-      const random = Math.floor(Math.random * count);
+      const random = Math.floor(Math.random() * count);
       return Lemonphrase.findOne();
     })
     .then((randomPhrase) => {

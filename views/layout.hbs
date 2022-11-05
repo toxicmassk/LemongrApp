@@ -12,11 +12,11 @@
     <nav>
       {{#if user}}
         <form action="/authentication/log-out" method="POST">
-          <button>Log out</button>
           <a href="/account">Your account</a>
+          <button>Log out</button>
         </form>
       {{else}}
-        <a href="/authentication/create-account">Create account</a>
+        <a href="/authentication/create-account">Register to find out more</a>
         <a href="/authentication/log-in">Log in</a>
       {{/if}}
     </nav>
