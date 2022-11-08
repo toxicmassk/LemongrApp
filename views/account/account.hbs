@@ -2,6 +2,12 @@
 
 <h1>Account of {{user.name}}</h1>
 
+<div>
+  <article>{{phrase}}</article>
+  <img id="lemonphrase" src="/images/lemon-button2.png" alt="lemon" />
+  {{!-- <img id="lemonphrase" src="{{image}}" alt="lemon" />--}}
+</div>
+
 <h2>
   <a href="/recipes">Recipes</a>
   <a href="/create/published">Your recipes</a>
@@ -11,9 +17,3 @@
     <button>Delete Account</button>
   </form>
 </h2>
-
-<div>
-  <article>{{phrase}}</article>
-  <img id="lemonphrase" src="/images/lemon-button2.png" alt="lemon" />
-  {{!-- <img id="lemonphrase" src="{{image}}" alt="lemon" />--}}
-</div>

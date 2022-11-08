@@ -11,8 +11,7 @@ const recipeSchema = new mongoose.Schema(
     },
     picture: {
       type: String,
-      default:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/P1030323.JPG/330px-P1030323.JPG',
+      default: '/public/images/default-lemon.jpeg',
       required: true
     },
     title: {

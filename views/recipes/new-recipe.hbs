@@ -29,26 +29,12 @@
 <label for="input-picture">Upload a picture of the dish</label>
 <input id="input-picture" type="file" name="picture" required/> 
 
-<input id="input-title" type="text" placeholder="Title of the recipe" name="title" minlength='2' maxlength="15" />
+<input id="input-title" type="text" placeholder="Title of the recipe" name="title" minlength='2' maxlength="15" required/>
 
 <label for="input-ingredients">Ingredient List <small>(List ingredients separated by a comma)</small></label>
 <input id="input-ingredients" type="text" placeholder="Ingredients of the recipe" name="ingredients" required/>
 
-{{!--
-<div onclick="button" value="ingredient">
-<input id="input-ingredient" type="text" placeholder="Each ingredient of the recipe" name="ingredient"/>
-<button>+</button>
-</div>
---}}
-
-{{!--
-{{#if oneIngredient}}
-<button type="button" value="oneIngredient" >+</button>
-<input id="input-ingredients" type="text" placeholder="Ingredients of the recipe" name="ingredients"/>
-{{/if}}
---}}
-
-<textarea id="input-instruction" placeholder="Instruction for the recipe" name="instruction">
+<textarea id="input-instruction" placeholder="Instruction for the recipe" name="instruction" required>
 </textarea>
 <p>Everything right?</p>
 <button>Then publish</button>

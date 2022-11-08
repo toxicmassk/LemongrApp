@@ -51,39 +51,13 @@ publicationRouter.post(
   }
 );
 
-/* Humble try to use one input at a time
-publicationRouter.post('/', routeGuard, (req, res, next) => {
-  const { category, title, ingredients, instruction } = req.body;
-  const author = req.user._id;
-  Recipe.create({
-    category,
-    // picture: picture,
-    title,
-    ingredients,
-    instruction,
-    author
-  })
-    .then((publication) => {
-      res.redirect(`/recipes/category/${publication._id}`);
-      if (publication) {
-        res.render('create', {
-          oneIngredient: true
-        });
-      }
-    })
-    .catch((error) => {
-      next(error);
-    });
-});
-*/
-
 // Render recipes published by user and add them to the /published site
 publicationRouter.get('/published', routeGuardMiddleware, (req, res, next) => {
   Recipe.find({ user: req.user._id })
     .sort({ createdAt: -1 })
     .populate('publication')
     .then((publications) => {
-      res.render('recipes/user-recipes', { publications });
+      res.render('recipes/publications', { publications });
     })
     .catch((error) => {
       next(error);
