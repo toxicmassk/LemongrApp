@@ -32,12 +32,13 @@ favoriteRouter.post(
   routeGuardMiddleware,
   (req, res, next) => {
     const { recipeId } = req.params;
+    const { category } = req.query;
     Favorite.findOneAndDelete({
       user: req.user._id,
       recipe: recipeId
     })
       .then(() => {
-        res.redirect('/recipes'); // maybe change redirection
+        res.redirect(`/recipes/category?category=${category}`); // maybe change redirection
       })
       .catch((error) => {
         next(error);
@@ -46,8 +47,9 @@ favoriteRouter.post(
 );
 
 // Post requests for favorite recipe
-favoriteRouter.post('/:recipeId', routeGuardMiddleware, (req, res, next) => {
+favoriteRouter.post('/:recipeId/', routeGuardMiddleware, (req, res, next) => {
   const { recipeId } = req.params;
+  const { category } = req.query;
   Favorite.findOne({
     user: req.user._id,
     recipe: recipeId
@@ -67,7 +69,7 @@ favoriteRouter.post('/:recipeId', routeGuardMiddleware, (req, res, next) => {
       }
     })
     .then(() => {
-      res.redirect('/recipes'); // maybe change redirection
+      res.redirect(`/recipes/category?category=${category}`); // maybe change redirection
     })
     .catch((error) => {
       next(error);

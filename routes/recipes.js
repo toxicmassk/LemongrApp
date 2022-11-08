@@ -34,7 +34,12 @@ router.get('/category', routeGuard, (req, res, next) => {
     })
     .then((favorites) => {
       console.log('FAVORITES: ', favorites);
-      const jointFavorites = favorites.join('');
+      const jointFavorites = favorites.join(''); // map method
+      /*const userFavorite = favorites.map((elements) => {
+        return elements._id;
+      });
+      console.log(userFavorite);*/
+
       console.log('JOINT FAVORITES: ', jointFavorites);
       const recipesToRender = recipesFromDb.map((recipe) => {
         if (jointFavorites.includes(recipe._id)) {
@@ -47,7 +52,7 @@ router.get('/category', routeGuard, (req, res, next) => {
             instruction: recipe.instruction,
             alkalinefood: recipe.alkalinefood,
             favorited: true
-          };
+          }; // spread operator instead
         } else {
           return {
             _id: recipe._id,
