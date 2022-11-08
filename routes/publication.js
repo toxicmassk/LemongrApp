@@ -27,18 +27,17 @@ publicationRouter.post(
   upload.single('picture'),
   (req, res, next) => {
     console.log('BODY: ', req.body);
-    // const url = req.file.path;
+    const picture = req.file.path;
     const { category, title, ingredients, instruction } = req.body;
     const author = req.user._id;
     // if my ingredients string is 'egg, milk, flour' -> ['egg','milk','flour']
     console.log('INGREDIENTS', ingredients);
-    // const splittedIngrediends = ingredients.slice(',');
+    const splitIngredientList = ingredients.split(',');
     Recipe.create({
       category,
-      // picture: picture,
+      picture,
       title,
-      ingredients,
-      // splittedIngrediends,
+      ingredients: splitIngredientList,
       instruction,
       author
     })
@@ -81,9 +80,10 @@ publicationRouter.post('/', routeGuard, (req, res, next) => {
 // Render recipes published by user and add them to the /published site
 publicationRouter.get('/published', routeGuardMiddleware, (req, res, next) => {
   Recipe.find({ user: req.user._id })
+    .sort({ createdAt: -1 })
     .populate('publication')
-    .then(() => {
-      res.render('recipes/user-recipes', { publication });
+    .then((publications) => {
+      res.render('recipes/user-recipes', { publications });
     })
     .catch((error) => {
       next(error);

@@ -2,12 +2,14 @@
 
 <h1>Account of {{user.name}}</h1>
 
-muted for burgermenu
 <h2>
   <a href="/recipes">Recipes</a>
-  <a href="/create/published">Your published recipes</a>
+  <a href="/create/published">Your recipes</a>
   <a href="/favorite">Favorites</a>
   <a href="/selfcare">Selfcare</a>
+  <form method="POST" action="/authentication/delete">
+    <button>Delete Account</button>
+  </form>
 </h2>
 
 <div>
@@ -15,7 +17,3 @@ muted for burgermenu
   <img id="lemonphrase" src="/images/lemon-button2.png" alt="lemon" />
   {{!-- <img id="lemonphrase" src="{{image}}" alt="lemon" />--}}
 </div>
-
-<form method="POST" action="/authentication/delete">
-  <button>Delete Account</button>
-</form>
