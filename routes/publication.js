@@ -31,12 +31,13 @@ publicationRouter.post(
     const author = req.user._id;
     // if my ingredients string is 'egg, milk, flour' -> ['egg','milk','flour']
     console.log('INGREDIENTS', ingredients);
-    const splittedIngrediends = ingredients.split(',');
+    // const splittedIngrediends = ingredients.slice(',');
     Recipe.create({
       category,
       // picture: picture,
       title,
-      splittedIngrediends,
+      ingredients,
+      // splittedIngrediends,
       instruction,
       author
     })
@@ -50,9 +51,42 @@ publicationRouter.post(
   }
 );
 
-// Render recipes published by user
+/* Humble try to use one input at a time
+publicationRouter.post('/', routeGuard, (req, res, next) => {
+  const { category, title, ingredients, instruction } = req.body;
+  const author = req.user._id;
+  Recipe.create({
+    category,
+    // picture: picture,
+    title,
+    ingredients,
+    instruction,
+    author
+  })
+    .then((publication) => {
+      res.redirect(`/recipes/category/${publication._id}`);
+      if (publication) {
+        res.render('create', {
+          oneIngredient: true
+        });
+      }
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+*/
+
+// Render recipes published by user and add them to the /published site
 publicationRouter.get('/published', routeGuard, (req, res, next) => {
-  res.render('recipes/user-recipes');
+  Recipe.find({ user: req.user._id })
+    .populate('publication')
+    .then(() => {
+      res.render('recipes/user-recipes', { publication });
+    })
+    .catch((error) => {
+      next(error);
+    });
 });
 
 module.exports = publicationRouter;
