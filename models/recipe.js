@@ -12,16 +12,20 @@ const recipeSchema = new mongoose.Schema(
     picture: {
       type: String,
       default:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/P1030323.JPG/330px-P1030323.JPG'
-      // required: true
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/P1030323.JPG/330px-P1030323.JPG',
+      required: true
     },
     title: {
       type: String,
       required: true
     },
     ingredients: {
-      type: [String],
-      required: true
+      type: [
+        {
+          type: String,
+          trim: true
+        }
+      ]
     },
     instruction: {
       type: String,

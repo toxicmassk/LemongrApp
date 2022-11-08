@@ -6,7 +6,7 @@
   <a href="/recipes/food-list"> <strong>alkaline food list</strong></a>!</p>
 
 
-<form method="POST" action="/create">
+<form method="POST" action="/create" enctype="multipart/form-data">
 
 <label for="input-category">What kind of food?</label>
 <div>
@@ -26,12 +26,13 @@
 <label for="input-drinks">Drinks</label>
 </div>
 
-{{!-- <label for="input-picture">Upload a picture of the dish</label>
-<input id="input-picture" type="file" name="picture"/> --}}
+<label for="input-picture">Upload a picture of the dish</label>
+<input id="input-picture" type="file" name="picture" required/> 
 
 <input id="input-title" type="text" placeholder="Title of the recipe" name="title" minlength='2' maxlength="15" />
 
-<input id="input-ingredients" type="text" placeholder="Ingredients of the recipe" name="ingredients"/>
+<label for="input-ingredients">Ingredient List <small>(List ingredients separated by a comma)</small></label>
+<input id="input-ingredients" type="text" placeholder="Ingredients of the recipe" name="ingredients" required/>
 
 {{!--
 <div onclick="button" value="ingredient">
