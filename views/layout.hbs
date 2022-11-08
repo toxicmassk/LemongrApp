@@ -7,8 +7,15 @@
     />
     <title>{{title}}</title>
     <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;1,300;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+
     <nav>
       {{#if user}}
         <form action="/authentication/log-out" method="POST">
@@ -23,7 +30,23 @@
         <a href="/authentication/log-in">Log in</a>
       {{/if}}
     </nav>
-    {{{body}}}
+
+    {{!-- bootstrap navbar
+    {{! Burgermenu try  }}
+    <div id="navbar">
+      {{#if user}}
+     {{> navbarPartial}}
+       {{else}}
+    <a href="/authentication/create-account">Register to find out more</a>
+    <a href="/authentication/log-in">Log in</a>
+      {{/if}}
+    </div>
+--}}
+
+    <div class="container">
+      {{{body}}}
+    </div>
+
     <script src="/scripts/script.js"></script>
   </body>
 </html>
