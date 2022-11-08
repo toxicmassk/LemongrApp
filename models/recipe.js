@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 const mongoose = require('mongoose');
 
@@ -34,6 +34,9 @@ const recipeSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       required: true
+    },
+    publication: {
+      type: String
     }
   },
   { timestamps: true }
