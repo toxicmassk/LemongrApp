@@ -1,12 +1,13 @@
 'use strict';
 
 const express = require('express');
-const publicationRouter = express.Router();
 const multer = require('multer');
 const cloudinary = require('cloudinary');
 const multerStorageCloudinary = require('multer-storage-cloudinary');
 const Recipe = require('./../models/recipe');
-const routeGuard = require('./../middleware/route-guard');
+const routeGuardMiddleware = require('./../middleware/route-guard');
+
+const publicationRouter = express.Router();
 
 const storage = new multerStorageCloudinary.CloudinaryStorage({
   cloudinary: cloudinary.v2
@@ -15,14 +16,14 @@ const storage = new multerStorageCloudinary.CloudinaryStorage({
 const upload = multer({ storage: storage });
 
 // Render recipes create page
-publicationRouter.get('/', routeGuard, (req, res, next) => {
+publicationRouter.get('/', routeGuardMiddleware, (req, res, next) => {
   res.render('recipes/new-recipe');
 });
 
 // Create recipe
 publicationRouter.post(
   '/',
-  routeGuard,
+  routeGuardMiddleware,
   upload.single('picture'),
   (req, res, next) => {
     console.log('BODY: ', req.body);
@@ -78,7 +79,7 @@ publicationRouter.post('/', routeGuard, (req, res, next) => {
 */
 
 // Render recipes published by user and add them to the /published site
-publicationRouter.get('/published', routeGuard, (req, res, next) => {
+publicationRouter.get('/published', routeGuardMiddleware, (req, res, next) => {
   Recipe.find({ user: req.user._id })
     .populate('publication')
     .then(() => {
