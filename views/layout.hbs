@@ -18,8 +18,8 @@
 
     <nav>
       {{#if user}}
+        <a href="/account">Your account</a>
         <form action="/authentication/log-out" method="POST">
-          <a href="/account">Your account</a>
           <button>Log out</button>
         </form>
         <form method="POST" action="/authentication/delete">

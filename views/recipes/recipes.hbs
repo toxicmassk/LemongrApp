@@ -3,7 +3,12 @@
 <form action="/recipes/search" method="GET">
   <label>
     <h3> What's cookin'?</h3>
-    <input type="text" placeholder="Search by ingredient" name="alkalinefood" />
+    <input
+      type="text"
+      placeholder="Search by ingredient"
+      name="alkalinefood"
+      required
+    />
     <button type="submit">Search</button>
   </label>
   {{#if noRecipes}}
@@ -15,7 +20,7 @@
 
 <h3>Search by caregory</h3>
 
-<div>
+<div class="text-bg-primary p-3">
   <a href="/recipes/category?category=Breakfast">
     <button>Breakfast</button>
   </a>
