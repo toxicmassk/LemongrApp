@@ -17,7 +17,7 @@ const upload = multer({ storage: storage });
 
 // Render recipes create page
 publicationRouter.get('/', routeGuardMiddleware, (req, res, next) => {
-  res.render('recipes/new-recipe');
+  res.render('recipes/create-recipe');
 });
 
 // Create recipe
@@ -43,7 +43,7 @@ publicationRouter.post(
     })
       .then((publications) => {
         console.log(publications);
-        res.redirect(`/recipes/category/${publications._id}`);
+        res.redirect(`/recipes/category/${publications._id}`); // Buggs here??
       })
       .catch((error) => {
         next(error);
@@ -53,7 +53,7 @@ publicationRouter.post(
 
 // Render recipes published by user and add them to the /published site
 publicationRouter.get(
-  '/recipes/category/:id',
+  '/published', // Buggs here
   routeGuardMiddleware,
   (req, res, next) => {
     Recipe.find({ user: req.user._id })
