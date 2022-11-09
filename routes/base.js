@@ -26,4 +26,11 @@ router.get('/account', routeGuard, (req, res, next) => {
     });
 });
 
+// Render Information
+
+router.get('/information', routeGuard, (req, res, next) => {
+  console.log('information');
+  res.render('information');
+});
+
 module.exports = router;
