@@ -29,6 +29,7 @@ a {
 
 nav {
   display: flex;
+  justify-content: space-between;
   a,
   button {
     padding: 1em 0;
@@ -90,56 +91,9 @@ label {
 
 .error {
   padding: 1em;
-  background-color: #ff3f3f;
+  background-color: #ff7314;
   color: white;
 }
-
-.lemonLogo {
-  width: 40%;
-}
-
-/*
-// Style the navigation menu
-.burgermenu {
-  overflow: hidden;
-  position: relative;
-}
-
-// Hide links inside navigation menu (except for logo/home)
-.burgermenu #navLinks {
-  display: none;
-}
-
-// Style navigation menu links
-.burgermenu a {
-  color: black;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  display: block;
-}
-
-//Style the hamburger menu 
-.burgermenu a.burgerIcon {
-  background: yellow;
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-// Add a grey background color on mouse-over
-.burgermenu a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-// Style the active link (or home/logo)
-.active {
-  background-color: #04aa6d;
-  color: white;
-}
-*/
 
 #lemonphrase {
   height: 40%;
