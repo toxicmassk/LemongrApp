@@ -9368,6 +9368,7 @@ a {
 
 nav {
   display: flex;
+  justify-content: space-between;
 }
 
 nav a,
@@ -9440,10 +9441,6 @@ label {
   padding: 1em;
   background-color: #ff7314;
   color: white;
-}
-
-.lemonLogo {
-  width: 40%;
 }
 
 #lemonphrase {

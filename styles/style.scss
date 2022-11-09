@@ -29,6 +29,7 @@ a {
 
 nav {
   display: flex;
+  justify-content: space-between;
   a,
   button {
     padding: 1em 0;
@@ -92,10 +93,6 @@ label {
   padding: 1em;
   background-color: #ff7314;
   color: white;
-}
-
-.lemonLogo {
-  width: 40%;
 }
 
 #lemonphrase {

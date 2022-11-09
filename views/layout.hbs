@@ -15,10 +15,10 @@
     />
   </head>
   <body>
-
     <nav>
       {{#if user}}
         <a href="/account">Your account</a>
+        <img id="lemonLogo" src="/images/logo.png" alt="LemongrApp logo" />
         <form action="/authentication/log-out" method="POST">
           <button>Log out</button>
         </form>
