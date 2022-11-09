@@ -1,13 +1,17 @@
-    <a href="/recipes/category/{{_id}}">
-    <h2>{{title}}</h2>
-    <img src="{{picture}}" alt="{{title}}" />
-    
-    {{#if favorited}}
-    <form method="POST" action="/favorite/{{_id}}/unfavorite?category={{category}}">
-      <input type="submit" value="Unfavorite" />
-    </form>
-    {{else}}
-    <form method="POST" action="/favorite/{{_id}}?category={{category}}"> 
-      <button type="submit">Favorite</button>
-    </form>
-    {{/if}}
+<a href="/create/published">Publications</a>
+console.log('/create');
+<h2>{{title}}</h2>
+<img src="{{picture}}" alt="{{title}}" />
+
+{{#if favorited}}
+  <form
+    method="POST"
+    action="/favorite/{{_id}}/unfavorite?category={{category}}"
+  >
+    <input type="submit" value="Unfavorite" />
+  </form>
+{{else}}
+  <form method="POST" action="/favorite/{{_id}}?category={{category}}">
+    <button type="submit">Favorite</button>
+  </form>
+{{/if}}
