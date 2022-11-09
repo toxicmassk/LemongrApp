@@ -41,9 +41,9 @@ publicationRouter.post(
       instruction,
       author
     })
-      .then((publication) => {
-        console.log(publication);
-        res.redirect(`/recipes/category/${publication._id}`);
+      .then((publications) => {
+        console.log(publications);
+        res.redirect(`/recipes/category/${publications._id}`);
       })
       .catch((error) => {
         next(error);
@@ -52,16 +52,20 @@ publicationRouter.post(
 );
 
 // Render recipes published by user and add them to the /published site
-publicationRouter.get('/published', routeGuardMiddleware, (req, res, next) => {
-  Recipe.find({ user: req.user._id })
-    .sort({ createdAt: -1 })
-    .populate('publication')
-    .then((publications) => {
-      res.render('recipes/publications', { publications });
-    })
-    .catch((error) => {
-      next(error);
-    });
-});
+publicationRouter.get(
+  '/recipes/category/:id',
+  routeGuardMiddleware,
+  (req, res, next) => {
+    Recipe.find({ user: req.user._id })
+      .sort({ createdAt: -1 })
+      .populate('publication')
+      .then((publications) => {
+        res.render('recipes/publications', { publications });
+      })
+      .catch((error) => {
+        next(error);
+      });
+  }
+);
 
 module.exports = publicationRouter;
