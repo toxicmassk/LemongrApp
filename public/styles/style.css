@@ -9368,8 +9368,6 @@ a {
 
 nav {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 nav a,
@@ -9442,6 +9440,16 @@ label {
   padding: 1em;
   background-color: #ff7314;
   color: white;
+}
+
+#lemonLogo {
+  margin: 10px 150px 0;
+  max-width: 40%;
+  max-height: 40%;
+}
+
+#welcome {
+  text-align: center;
 }
 
 #lemonphrase {
