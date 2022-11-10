@@ -1,7 +1,7 @@
 @import 'bootstrap';
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;1,300;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
 
-$font-sans: 'Poppins', sans-serif;
+$font-sans: 'Quicksand', sans-serif;
 $grey: hsl(0, 0, 90%);
 
 * {
@@ -107,4 +107,54 @@ label {
 #lemonphrase {
   height: 40%;
   width: 40%;
+}
+
+// Round buttons
+.roundBtn {
+  display: inline-block;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.btnSize1 {
+  width: 160px;
+  height: 160px;
+  line-height: 160px;
+}
+
+.btnSize2 {
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+}
+
+.btnSize3 {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+}
+
+// CI Colors
+.pink {
+  background: pink;
+}
+
+.palegreen {
+  background: palegreen;
+}
+
+.gold {
+  background: gold;
+}
+
+.seagreen {
+  background: seagreen;
+}
+
+.darkorange {
+  background: #ff7f00;
+}
+
+.outline {
+  border: 5px solid pink;
 }
