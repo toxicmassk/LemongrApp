@@ -110,10 +110,6 @@ label {
   color: darkorange;
 }
 
-.container .lemonphrase {
-  margin: 80px 0;
-}
-
 .lemonphrase .phrase {
   font-family: 'Handlee';
   font-size: 2.8em;
@@ -143,12 +139,19 @@ label {
   border-bottom: 16px solid transparent;
 }
 
+.containerLinks {
+  margin: 80px 0;
+  padding: 0;
+}
+
 .linkBtns {
+  font-size: 1.5em;
   border-radius: 12px;
-  margin: 10px 20px;
   padding: 20px 80px;
   width: 100%;
-  text-align: center;
+  //text-align: center;
+  border: none;
+  box-shadow: 2px 2px 5px 1px grey;
 }
 
 .btn .linkBtns:first-child {
@@ -158,27 +161,26 @@ label {
 // CI Colors
 .tomato {
   background: tomato;
-  // color: white;
 }
 
 .palegreen {
   background: palegreen;
-  // color: tomato;
 }
 
 .gold {
   background: gold;
-  //color: seagreen;
+}
+
+.olivedrap {
+  background: #c0ff3e;
 }
 
 .seagreen {
   background: seagreen;
-  // color: white;
 }
 
 .darkorange {
   background: #ff7f00;
-  //color: white;
 }
 
 .greentext {
@@ -190,10 +192,10 @@ label {
   border-radius: 12px;
 }
 
-.blackButton {
+.blackBtn {
   display: block;
   border-radius: 12px;
-  margin: 10px 20px;
+  margin: 150px 0 20px;
   padding: 20px 80px;
   width: 100%;
   text-align: center;
@@ -234,4 +236,10 @@ label {
 
 .goBack {
   margin: 60px 0;
+}
+
+.favoriteBtn {
+  background-image: url(/images/lemon-button2.png);
+  width: 50px;
+  height: 50px;
 }
