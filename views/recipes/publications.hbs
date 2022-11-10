@@ -3,18 +3,11 @@
 
 <div>
   <ul>
-    {{#each publication}}
+    {{#each publications}}
       {{> publicationPartial }}
     {{/each}}
   </ul>
 </div>
-
-{{!--
-<h2> {{recipe.category}}</h2>
-  <a href="/recipes/category/{{_id}}">
-    <h2>{{title}}</h2>
-    <img src="{{picture}}" alt="{{title}}" />
---}}
 
 
 <h3>
@@ -22,8 +15,6 @@
     <a href="javascript:history.back()">Go back</a>
   </i>
 </h3>
-
-Iterate over publications and output publication partial 
 
 
 

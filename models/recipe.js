@@ -37,10 +37,10 @@ const recipeSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       required: true
-    },
-    publication: {
-      type: String
     }
+    //publication: {
+    //type: String
+    //}
   },
   { timestamps: true }
 );

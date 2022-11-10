@@ -43,7 +43,7 @@ publicationRouter.post(
     })
       .then((publications) => {
         console.log(publications);
-        res.redirect(`/recipes/category/${publications._id}`); // Buggs here??
+        res.redirect('/create/published'); //everything after the localhost
       })
       .catch((error) => {
         next(error);
@@ -56,10 +56,11 @@ publicationRouter.get(
   '/published', // Buggs here
   routeGuardMiddleware,
   (req, res, next) => {
-    Recipe.find({ user: req.user._id })
+    Recipe.find({ author: req.user._id })
       .sort({ createdAt: -1 })
-      .populate('publication')
+      //.populate('publication')
       .then((publications) => {
+        console.log('publication', { publications });
         res.render('recipes/publications', { publications });
       })
       .catch((error) => {

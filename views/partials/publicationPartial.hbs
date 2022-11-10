@@ -1,8 +1,7 @@
-<a href="/create/published">Publications</a>
-console.log('/create');
-<h2>{{title}}</h2>
-<img src="{{picture}}" alt="{{title}}" />
-
+<a href="/recipes/category/{{_id}}">
+  <h2>{{title}}</h2>
+  <img src="{{picture}}" alt="{{title}}" />
+</a>
 {{#if favorited}}
   <form
     method="POST"

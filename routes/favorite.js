@@ -15,6 +15,10 @@ favoriteRouter.get('/', routeGuardMiddleware, (req, res, next) => {
     .populate('recipe')
     .then((favorites) => {
       console.log('favorites', { favorites });
+      const newFavorite = favorites.map((element) => {
+        element.recipe.favorited = true;
+        return element;
+      });
       res.render('favorites/favorite', { favorites });
     })
     .catch((error) => {
