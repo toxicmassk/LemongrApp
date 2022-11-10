@@ -1,20 +1,27 @@
-<h3 id="welcome">Welcome to the alkaline way of living !</h3>
+<h1 id="welcome">Welcome to the alkaline way of living !</h1>
 
 <h3>Yello {{user.name}} !</h3>
 
-<div id="lemonphrase">
-  <article>{{phrase}}</article>
-  <img src="/images/winking-lemon.png" alt="lemon" />
+<div class="container lemonphrase">
+  <div class="row">
+    <div class="col phrase">
+      <article>{{phrase}}</article>
+    </div>
+    <div class="col">
+      <img src="/images/winking-lemon.png" alt="lemon" />
+    </div>
+  </div>
 </div>
 
-<div>
+<div class="roundButtons">
   <a href="/recipes" class="roundBtn palegreen btnSize1">Recipes</a>
-  <a href="/create/published" class="roundBtn pink btnSize3">Your recipes</a>
-  <a href="/favorite" class="roundBtn gold btnSize2">Favorites</a>
-  <a href="/selfcare" class="roundBtn seagreen btnSize1">Selfcare</a>
   <a href="/create" class="roundBtn darkorange btnSize2">Create a recipe</a>
-  <a href="/create" class="roundBtn pink btnSize1">Alkaline Infos</a>
-  <form method="POST" action="/authentication/delete">
-    <button>Delete Account</button>
-  </form>
+  <a href="/favorite" class="roundBtn gold btnSize2">Favorites</a>
+  <a href="/create/published" class="roundBtn tomato btnSize3">Your recipes</a>
+  <a href="/selfcare" class="roundBtn seagreen btnSize1">Selfcare</a>
+  <a href="/information" class="roundBtn tomato btnSize1">Alkaline</a>
 </div>
+
+<form method="POST" action="/authentication/delete">
+  <button>Delete Account</button>
+</form>

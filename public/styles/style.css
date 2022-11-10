@@ -4,7 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Handlee&family=Quicksand:wght@500;700&display=swap");
 :root {
   --blue: #ff7314;
   --indigo: #6610f2;
@@ -9442,37 +9442,71 @@ label {
   color: white;
 }
 
-#lemonLogo {
-  margin: 10px 150px 0;
-  max-width: 40%;
-  max-height: 40%;
+#startLogo {
+  padding: 60px 0 40px;
 }
 
 #welcome {
   text-align: center;
+  padding-bottom: 30px;
+  color: darkorange;
 }
 
-#lemonphrase {
-  height: 40%;
-  width: 40%;
+.lemonphrase .phrase {
+  font-size: 2.8em;
+  text-align: center;
+  line-height: 1.5em;
+  width: 240px;
+  height: 300px;
+  padding: 20px;
+  background: seagreen;
+  color: white;
+  position: relative;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+}
+
+.lemonphrase .phrase:before {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 36px;
+  width: 0;
+  height: 0;
+  border-top: 16px solid transparent;
+  border-left: 36px solid seagreen;
+  border-bottom: 16px solid transparent;
+}
+
+div .roundButtons {
+  box-sizing: content-box;
+  width: 30%;
+  display: inline;
+  padding: 40px;
+  width: 200px;
 }
 
 .roundBtn {
   display: inline-block;
   border-radius: 50%;
   text-align: center;
+  margin: 10px;
+  font-weight: bold;
 }
 
 .btnSize1 {
   width: 160px;
   height: 160px;
   line-height: 160px;
+  font-size: 1.4em;
 }
 
 .btnSize2 {
   width: 120px;
   height: 120px;
   line-height: 120px;
+  font-size: 1em;
 }
 
 .btnSize3 {
@@ -9481,8 +9515,8 @@ label {
   line-height: 100px;
 }
 
-.pink {
-  background: pink;
+.tomato {
+  background: tomato;
 }
 
 .palegreen {
@@ -9501,8 +9535,25 @@ label {
   background: #ff7f00;
 }
 
+.greentext {
+  color: seagreen;
+}
+
 .outline {
   border: 5px solid pink;
+}
+
+.categoryBtns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.categoryBtns button {
+  background-color: white;
+  border: 2px solid seagreen;
+  margin: 10px;
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
