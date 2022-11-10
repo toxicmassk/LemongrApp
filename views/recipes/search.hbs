@@ -9,6 +9,18 @@
           <img src="{{picture}}" alt="{{title}}" />
         </a>
       </li>
+      {{#if favorited}}
+        <form
+          method="POST"
+          action="/favorite/{{_id}}/unfavorite?category={{category}}"
+        >
+          <input type="submit" value="Unfavorite" />
+        </form>
+      {{else}}
+        <form method="POST" action="/favorite/{{_id}}?category={{category}}">
+          <button type="submit">Favorite</button>
+        </form>
+      {{/if}}
     {{/each}}
   </ul>
 </div>

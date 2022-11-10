@@ -4,6 +4,7 @@ const { Router } = require('express');
 
 const bcryptjs = require('bcryptjs');
 const User = require('./../models/user');
+const routeGuard = require('./../middleware/route-guard');
 
 const router = new Router();
 
@@ -62,16 +63,16 @@ router.post('/log-in', (req, res, next) => {
     });
 });
 
-router.post('/log-out', (req, res, next) => {
+router.post('/log-out', routeGuard, (req, res, next) => {
   req.session.destroy();
   res.redirect('/');
 });
 
-router.get('/delete-request', (req, res, next) => {
+router.get('/delete-request', routeGuard, (req, res, next) => {
   res.render('delete-request');
 });
 
-router.post('/delete-request/delete', (req, res, next) => {
+router.post('/delete-request/delete', routeGuard, (req, res, next) => {
   User.findByIdAndDelete(req.user._id)
     .then(() => {
       req.session.destroy();
