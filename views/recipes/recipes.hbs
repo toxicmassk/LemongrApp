@@ -1,9 +1,10 @@
 <h1>All recipe categories</h1>
 
-<form action="/recipes/search" method="GET">
+<h3> What's cookin'?</h3>
+<form class="search" action="/recipes/search" method="GET">
   <label>
-    <h3> What's cookin'?</h3>
     <input
+      class="outline"
       type="text"
       placeholder="Search by ingredient"
       name="alkalinefood"
@@ -20,26 +21,25 @@
 
 <h3>Search by category</h3>
 
-<div class="d-grid gap-2 categoryBtns">
+<div class="categoryBtns">
   <a href="/recipes/category?category=Breakfast">
-    <button class="btn btn-lg" type="button">Breakfast</button>
+    <button class="btn btn-lg gold" type="button">Breakfast</button>
   </a>
   <a href="/recipes/category?category=Lunch">
-    <button class="btn btn-lg" type="button">Lunch</button>
+    <button class="btn btn-lg palegreen" type="button">Lunch</button>
   </a>
   <a href="/recipes/category?category=Dinner">
-    <button class="btn btn-lg" type="button">Dinner</button>
+    <button class="btn btn-lg darkorange" type="button">Dinner</button>
   </a>
   <a href="/recipes/category?category=Drinks">
-    <button class="btn btn-lg" type="button">Drinks</button>
+    <button class="btn btn-lg seagreen" type="button">Drinks</button>
   </a>
   <a href="/create">
-    <button class="btn btn-lg" type="button"><strong>Add your own recipe!</strong></button>
+    <button class="btn btn-lg outline" type="button"><strong>Add your own
+        recipe!</strong></button>
   </a>
 </div>
 
-<h3>
-  <i>
-    <a href="/account">Go back</a>
-  </i>
+<h3 class="goBack">
+  <a href="/account">Go back</a>
 </h3>

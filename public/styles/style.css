@@ -9401,6 +9401,10 @@ p:not(:last-child) {
   margin-bottom: 1rem;
 }
 
+h1 {
+  text-align: center;
+}
+
 img {
   width: 100%;
   max-width: 100%;
@@ -9515,6 +9519,12 @@ div .roundButtons {
   line-height: 100px;
 }
 
+/*
+.linkBtns {
+  border-radius: 12px;
+  margin: 10px;
+}
+*/
 .tomato {
   background: tomato;
 }
@@ -9540,7 +9550,31 @@ div .roundButtons {
 }
 
 .outline {
-  border: 5px solid pink;
+  border: 5px solid #ff7f00;
+  border-radius: 12px;
+}
+
+.search {
+  align-items: center;
+  margin: 10px;
+}
+
+.search input,
+.search button {
+  border-radius: 12px;
+}
+
+.search input {
+  border: 3px solid palegreen;
+  width: 420px;
+}
+
+.search button {
+  background: palegreen;
+}
+
+.search p strong {
+  color: darkorange;
 }
 
 .categoryBtns {
@@ -9550,10 +9584,13 @@ div .roundButtons {
 }
 
 .categoryBtns button {
-  background-color: white;
-  border: 2px solid seagreen;
+  border-radius: 12px;
   margin: 10px;
-  width: 100%;
+  width: 500px;
+}
+
+.goBack {
+  margin: 60px 0;
 }
 
 /*# sourceMappingURL=style.css.map */
