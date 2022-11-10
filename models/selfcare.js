@@ -16,10 +16,6 @@ const selfcareSchema = new mongoose.Schema(
     title: {
       type: String,
       required: true
-    },
-    instruction: {
-      type: String,
-      required: true
     }
   },
   { timestamps: true }

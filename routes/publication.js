@@ -52,21 +52,17 @@ publicationRouter.post(
 );
 
 // Render recipes published by user and add them to the /published site
-publicationRouter.get(
-  '/published', // Buggs here
-  routeGuardMiddleware,
-  (req, res, next) => {
-    Recipe.find({ author: req.user._id })
-      .sort({ createdAt: -1 })
-      //.populate('publication')
-      .then((publications) => {
-        console.log('publication', { publications });
-        res.render('recipes/publications', { publications });
-      })
-      .catch((error) => {
-        next(error);
-      });
-  }
-);
+publicationRouter.get('/published', routeGuardMiddleware, (req, res, next) => {
+  Recipe.find({ author: req.user._id })
+    .sort({ createdAt: -1 })
+    //.populate('publication')
+    .then((publications) => {
+      console.log('publication', { publications });
+      res.render('recipes/publications', { publications });
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
 
 module.exports = publicationRouter;
