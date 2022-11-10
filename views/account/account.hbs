@@ -13,31 +13,49 @@
   </div>
 </div>
 
-<div class="roundButtons">
-  <a href="/recipes" class="roundBtn palegreen btnSize1">Recipes</a>
-  <a href="/create" class="roundBtn darkorange btnSize2">Create a recipe</a>
-  <a href="/favorite" class="roundBtn gold btnSize2">Favorites</a>
-  <a href="/create/published" class="roundBtn tomato btnSize3">Your recipes</a>
-  <a href="/selfcare" class="roundBtn seagreen btnSize1">Selfcare</a>
-  <a href="/information" class="roundBtn tomato btnSize1">Alkaline</a>
-</div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-8">
+      <a href="/recipes">
+        <button
+          type="button"
+          class="btn linkBtns palegreen"
+        >Recipes</button></a>
+    </div>
+    <div class="col-6 col-md-4">
+      <a href="/create">
+        <button type="button" class="btn linkBtns darkorange">Create a recipe</button></a>
+    </div>
+  </div>
 
-{{!
-<div class="linkBtns">
-  <a href="/recipes" class="palegreen btnSize1">
-    <button type="button" class="btn">Recipes</button></a>
-  <a href="/create" class="darkorange btnSize2">
-    <button type="button" class="btn">Create a recipe</button></a>
-  <a href="/favorite" class="gold btnSize2">
-    <button type="button" class="btn">Favorites</button></a>
-  <a href="/create/published" class="tomato btnSize3">
-    <button type="button" class="btn">Your recipes</button></a>
-  <a href="/selfcare" class="seagreen btnSize1">
-    <button type="button" class="btn">Selfcare</button></a>
-  <a href="/information" class="tomato btnSize1">
-    <button type="button" class="btn">Alkaline</button></a>
+  <div class="row">
+    <div class="col-6 col-md-4">
+      <a href="/favorite">
+        <button type="button" class="btn linkBtns gold">Favorites</button>
+      </a>
+    </div>
+    <div class="col-6 col-md-4">
+      <a href="/create/published">
+        <button type="button" class="btn linkBtns tomato">Your recipes</button>
+      </a>
+    </div>
+    <div class="col-6 col-md-4">
+      <a href="/selfcare">
+        <button type="button" class="btn linkBtns seagreen">Selfcare</button>
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <button class="btn linkBtns darkorange"></button>
+    </div>
+  <div class="col-6">
+    <a href="/information">
+      <button type="button" class="btn linkBtns palegreen">Alkaline</button>
+    </a>
+  </div>
 </div>
-}}
 
 <form method="POST" action="/authentication/delete">
   <button class="outline">Delete Account</button>
