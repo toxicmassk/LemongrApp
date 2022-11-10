@@ -4,7 +4,11 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap");
+=======
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,300;0,400;1,300;1,500&display=swap");
+>>>>>>> a1a241246457a942b19ad07a23482b12964e92c9
 :root {
   --blue: #ff7314;
   --indigo: #6610f2;
@@ -9356,7 +9360,11 @@ body {
   padding: 0 1em;
   margin: 0 auto;
   font-family: sans-serif;
+<<<<<<< HEAD
   font-family: "Nunito Sans", sans-serif;
+=======
+  font-family: "Michroma", sans-serif;
+>>>>>>> a1a241246457a942b19ad07a23482b12964e92c9
   line-height: 2;
   height: 100%;
 }
@@ -9410,7 +9418,7 @@ h1 {
 
 img {
   width: 100%;
-  max-width: 100%;
+  height: auto;
 }
 
 form {
