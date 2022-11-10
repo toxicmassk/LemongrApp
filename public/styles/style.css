@@ -4,11 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-<<<<<<< HEAD
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap");
-=======
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,300;0,400;1,300;1,500&display=swap");
->>>>>>> a1a241246457a942b19ad07a23482b12964e92c9
 :root {
   --blue: #ff7314;
   --indigo: #6610f2;
@@ -9351,6 +9347,11 @@ a.text-dark:focus {
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
+@font-face {
+  font-family: Lemon Friday;
+  src: url(/font/LemonFriday.ttf);
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -9360,13 +9361,10 @@ body {
   padding: 0 1em;
   margin: 0 auto;
   font-family: sans-serif;
-<<<<<<< HEAD
-  font-family: "Nunito Sans", sans-serif;
-=======
-  font-family: "Michroma", sans-serif;
->>>>>>> a1a241246457a942b19ad07a23482b12964e92c9
+  font-family: "Urbanist", sans-serif;
   line-height: 2;
   height: 100%;
+  background-color: lemonchiffon;
 }
 
 a {
@@ -9379,6 +9377,8 @@ nav {
   box-shadow: 2px 4px 10px 1px lightgrey;
   width: 100%;
   border: 0;
+  background-color: white;
+  padding-top: 20px;
 }
 
 nav a,
@@ -9463,18 +9463,19 @@ label {
 
 #welcome {
   text-align: center;
+  line-height: 1.2em;
   padding: 40px 0;
   font-weight: bold;
 }
 
 .lemonphrase .phrase {
-  font-family: 'Handlee';
-  font-size: 2.8em;
+  font-family: 'Lemon Friday';
+  font-size: 2.5em;
   text-align: center;
   line-height: 1.5em;
   width: 240px;
   height: 320px;
-  padding: 20px;
+  padding: 30px;
   background: seagreen;
   color: white;
   position: relative;
@@ -9502,6 +9503,7 @@ label {
 }
 
 .linkBtns {
+  font-family: Lemon Friday;
   font-size: 1.5em;
   border-radius: 12px;
   padding: 20px 80px;
@@ -9523,6 +9525,7 @@ label {
   text-align: center;
   font-size: 1.2em;
   border: 4px solid black;
+  background-color: white;
 }
 
 .tomato {
@@ -9556,6 +9559,7 @@ label {
 .outline {
   border: 5px solid #ff7f00;
   border-radius: 12px;
+  background-color: white;
 }
 
 .search {
@@ -9571,10 +9575,12 @@ label {
 .search input {
   border: 3px solid palegreen;
   width: 420px;
+  background-color: white;
 }
 
 .search button {
   background: palegreen;
+  font-family: Lemon Friday;
 }
 
 .search p strong {
@@ -9588,6 +9594,7 @@ label {
 }
 
 .categoryBtns button {
+  font-family: Lemon Friday;
   border-radius: 12px;
   margin: 10px;
   width: 500px;
@@ -9598,9 +9605,7 @@ label {
 }
 
 .favoriteBtn {
-  background-image: url(/images/lemon-button2.png);
-  width: 50px;
-  height: 50px;
+  font-family: Lemon Friday;
 }
 
 /*# sourceMappingURL=style.css.map */

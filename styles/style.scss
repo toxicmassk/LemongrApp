@@ -3,6 +3,11 @@
 $font-sans: 'Urbanist', sans-serif;
 $grey: hsl(0, 0, 90%);
 
+@font-face {
+  font-family: Lemon Friday;
+  src: url(/font/LemonFriday.ttf);
+}
+
 * {
   &,
   &:before,
@@ -19,6 +24,8 @@ body {
   font-family: $font-sans;
   line-height: 2;
   height: 100%;
+  background-color: lemonchiffon;
+  // background: linear-gradient(0deg, lemonchiffon, #ffec8b);
 }
 
 a {
@@ -31,6 +38,8 @@ nav {
   box-shadow: 2px 4px 10px 1px lightgrey;
   width: 100%;
   border: 0;
+  background-color: white;
+  padding-top: 20px;
   a,
   button {
     padding: 1em 0;
@@ -108,18 +117,19 @@ label {
 // Account page
 #welcome {
   text-align: center;
+  line-height: 1.2em;
   padding: 40px 0;
   font-weight: bold;
 }
 
 .lemonphrase .phrase {
-  font-family: 'Handlee';
-  font-size: 2.8em;
+  font-family: 'Lemon Friday';
+  font-size: 2.5em;
   text-align: center;
   line-height: 1.5em;
   width: 240px;
   height: 320px;
-  padding: 20px;
+  padding: 30px;
   background: seagreen;
   color: white;
   position: relative;
@@ -147,6 +157,7 @@ label {
 }
 
 .linkBtns {
+  font-family: Lemon Friday;
   font-size: 1.5em;
   border-radius: 12px;
   padding: 20px 80px;
@@ -168,6 +179,7 @@ label {
   text-align: center;
   font-size: 1.2em;
   border: 4px solid black;
+  background-color: white;
 }
 
 // CI Colors
@@ -202,6 +214,7 @@ label {
 .outline {
   border: 5px solid #ff7f00;
   border-radius: 12px;
+  background-color: white;
 }
 
 // Category page
@@ -215,9 +228,11 @@ label {
   input {
     border: 3px solid palegreen;
     width: 420px;
+    background-color: white;
   }
   button {
     background: palegreen;
+    font-family: Lemon Friday;
   }
   p strong {
     color: darkorange;
@@ -229,6 +244,7 @@ label {
   flex-direction: column;
   align-items: center;
   button {
+    font-family: Lemon Friday;
     border-radius: 12px;
     margin: 10px;
     width: 500px;
@@ -240,7 +256,5 @@ label {
 }
 
 .favoriteBtn {
-  background-image: url(/images/lemon-button2.png);
-  width: 50px;
-  height: 50px;
+  font-family: Lemon Friday;
 }
