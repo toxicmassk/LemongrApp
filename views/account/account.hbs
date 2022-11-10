@@ -14,49 +14,40 @@
 </div>
 
 <div class="container text-center">
+  <a href="/recipes">
+    <button type="button" class="btn linkBtns tomato">
+      Recipes</button></a>
   <div class="row">
-    <div class="col-md-8">
-      <a href="/recipes">
-        <button
-          type="button"
-          class="btn linkBtns palegreen"
-        >Recipes</button></a>
-    </div>
     <div class="col-6 col-md-4">
       <a href="/create">
         <button type="button" class="btn linkBtns darkorange">Create a recipe</button></a>
     </div>
-  </div>
-
-  <div class="row">
+    <div class="col-6 col-md-4">
+      <a href="/create/published">
+        <button type="button" class="btn linkBtns palegreen">Your recipes</button>
+      </a>
+    </div>
     <div class="col-6 col-md-4">
       <a href="/favorite">
         <button type="button" class="btn linkBtns gold">Favorites</button>
-      </a>
-    </div>
-    <div class="col-6 col-md-4">
-      <a href="/create/published">
-        <button type="button" class="btn linkBtns tomato">Your recipes</button>
-      </a>
-    </div>
-    <div class="col-6 col-md-4">
-      <a href="/selfcare">
-        <button type="button" class="btn linkBtns seagreen">Selfcare</button>
       </a>
     </div>
   </div>
 
   <div class="row">
     <div class="col-6">
-      <button class="btn linkBtns darkorange"></button>
+      <a href="/selfcare">
+        <button type="button" class="btn linkBtns seagreen">Selfcare</button>
+      </a>
     </div>
-  <div class="col-6">
-    <a href="/information">
-      <button type="button" class="btn linkBtns palegreen">Alkaline</button>
-    </a>
+    <div class="col-6">
+      <a href="/information">
+        <button type="button" class="btn linkBtns darkorange">Alkaline Info</button>
+      </a>
+    </div>
   </div>
 </div>
 
 <form method="POST" action="/authentication/delete">
-  <button class="outline">Delete Account</button>
+  <button class="blackButton">Delete Account</button>
 </form>

@@ -9457,18 +9457,20 @@ label {
 }
 
 .lemonphrase .phrase {
+  font-family: 'Handlee';
   font-size: 2.8em;
   text-align: center;
   line-height: 1.5em;
   width: 240px;
   height: 320px;
-  padding: 40px 20px;
+  padding: 20px;
   background: seagreen;
   color: white;
   position: relative;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   border-radius: 15px;
+  box-shadow: 2px 2px 5px 1px grey;
 }
 
 .lemonphrase .phrase:before {
@@ -9488,6 +9490,11 @@ label {
   margin: 10px 20px;
   padding: 20px 80px;
   width: 100%;
+  text-align: center;
+}
+
+.btn .linkBtns:first-child {
+  width: 500px;
 }
 
 .tomato {
@@ -9517,6 +9524,16 @@ label {
 .outline {
   border: 5px solid #ff7f00;
   border-radius: 12px;
+}
+
+.blackButton {
+  border-radius: 12px;
+  margin: 10px 20px;
+  padding: 20px 80px;
+  width: 100%;
+  text-align: center;
+  background: black;
+  color: white;
 }
 
 .search {
