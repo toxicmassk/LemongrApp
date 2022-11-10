@@ -67,9 +67,14 @@ router.post('/log-out', (req, res, next) => {
   res.redirect('/');
 });
 
-router.post('/delete', (req, res, next) => {
+router.get('/delete-request', (req, res, next) => {
+  res.render('delete-request');
+});
+
+router.post('/delete-request/delete', (req, res, next) => {
   User.findByIdAndDelete(req.user._id)
     .then(() => {
+      req.session.destroy();
       res.redirect('/');
     })
     .catch((error) => {
