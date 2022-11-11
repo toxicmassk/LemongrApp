@@ -9364,7 +9364,7 @@ body {
   font-family: "Urbanist", sans-serif;
   line-height: 2;
   height: 100%;
-  background-color: lemonchiffon;
+  background: linear-gradient(0deg, lemonchiffon, #ffec8b);
 }
 
 a {
@@ -9508,7 +9508,7 @@ label {
   border-radius: 12px;
   width: 100%;
   border: none;
-  box-shadow: 2px 2px 5px 1px grey;
+  box-shadow: 4px 4px 6px 2px grey;
 }
 
 .btn .linkBtns:first-child {
@@ -9605,6 +9605,22 @@ label {
 
 .favoriteBtn {
   font-family: Lemon Friday;
+}
+
+.heartbtn {
+  align-items: center;
+  width: 10%;
+  height: 10%;
+}
+
+.arrowBack {
+  width: 10%;
+  height: 10%;
+}
+
+.col {
+  width: 70%;
+  height: 70%;
 }
 
 /*# sourceMappingURL=style.css.map */

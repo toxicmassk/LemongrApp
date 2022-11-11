@@ -24,8 +24,9 @@ body {
   font-family: $font-sans;
   line-height: 2;
   height: 100%;
-  background-color: lemonchiffon;
-  // background: linear-gradient(0deg, lemonchiffon, #ffec8b);
+  //background-color: lemonchiffon;
+  // Farbverlauf
+  background: linear-gradient(0deg, lemonchiffon, #ffec8b);
 }
 
 a {
@@ -163,7 +164,7 @@ label {
   //padding: 20px 80px;//
   width: 100%;
   border: none;
-  box-shadow: 2px 2px 5px 1px grey;
+  box-shadow: 4px 4px 6px 2px grey;
 }
 
 .btn .linkBtns:first-child {
@@ -182,7 +183,7 @@ label {
   background-color: white;
 }
 
-// CI Colors
+// CI Colors // backgroundcolor buttons
 .tomato {
   background: tomato;
 }
@@ -211,6 +212,7 @@ label {
   color: seagreen;
 }
 
+// Searchbar
 .outline {
   border: 5px solid #ff7f00;
   border-radius: 12px;
@@ -257,4 +259,25 @@ label {
 
 .favoriteBtn {
   font-family: Lemon Friday;
+}
+
+// lemon heart buttons
+
+.heartbtn {
+  align-items: center;
+  width: 10%;
+  height: 10%;
+}
+
+// Arrow go Back
+
+.arrowBack {
+  width: 10%;
+  height: 10%;
+}
+
+// Delet Lemon picture
+.col {
+  width: 70%;
+  height: 70%;
 }
