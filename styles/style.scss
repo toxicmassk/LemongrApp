@@ -104,9 +104,15 @@ label {
 }
 
 .error {
-  padding: 1em;
-  background-color: darkorange;
+  padding: 2em;
+  background-color: tomato;
   color: white;
+  border-radius: 12px;
+}
+
+.hover:hover {
+  color: #5b9f4a;
+  text-decoration: underline;
 }
 
 // Home page
@@ -257,4 +263,8 @@ label {
 
 .favoriteBtn {
   font-family: Lemon Friday;
+}
+
+#list-link {
+  font-size: 1.3em;
 }
