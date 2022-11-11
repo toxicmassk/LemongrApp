@@ -1,26 +1,30 @@
-<h3>{{recipe.category}}</h3>
-<h1>{{recipe.title}}</h1>
+<h3>{{category}}</h3>
+<h1>{{title}}</h1>
 
-<img src="{{recipe.picture}}" alt="{{recipe.title}}" />
+<img src="{{picture}}" alt="{{title}}" />
 {{#if favorited}}
   <form
     method="POST"
     action="/favorite/{{_id}}/unfavorite?category={{category}}"
   >
-    <input type="submit" value="Unfavorite" />
+    <button type="submit">
+      <img src="/images/heart-fill.png" alt="unfavorite" />
+    </button>
   </form>
 {{else}}
   <form method="POST" action="/favorite/{{_id}}?category={{category}}">
-    <button type="submit">Favorite</button>
+    <button type="submit">
+      <img src="/images/heart-line.png" alt="favorite" />
+    </button>
   </form>
 {{/if}}
 
 <ul>
-  {{#each recipe.ingredients}}
+  {{#each ingredients}}
     <li>{{this}}</li>
   {{/each}}
 </ul>
-<p>{{recipe.instruction}}</p>
+<p>{{instruction}}</p>
 
 <h3 class="goBack">
   <a href="javascript:history.back()">Go back</a>

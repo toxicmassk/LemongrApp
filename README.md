@@ -102,7 +102,7 @@ instructions: string
 
 ### Pages
 
-Selfcare – links to the selfcare topics (Breathing, Exercises, Bodycare, Cosmetics)
+Selfcare – links to the selfcare topics (Breathing, Exercises, Bodycare, Cosmetics) ✅
 
 Forum – exchange between users
 

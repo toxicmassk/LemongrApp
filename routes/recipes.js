@@ -80,9 +80,23 @@ router.get('/category', routeGuard, (req, res, next) => {
 // Single recipe
 router.get('/category/:id', routeGuard, (req, res, next) => {
   const id = req.params.id;
-  Recipe.findById(id)
+  const userId = req.user._id;
+  let userFav;
+  Favorite.find({ user: userId, recipe: id })
+    .then((userFavorite) => {
+      console.log(userFavorite);
+      userFav = userFavorite;
+      return Recipe.findById(id);
+    })
     .then((recipe) => {
-      res.render('recipes/single-recipe', { recipe });
+      console.log(recipe);
+      console.log(userFav);
+      if (userFav.length === 0) {
+        recipe.favorited = false;
+      } else {
+        recipe.favorited = true;
+      }
+      res.render('recipes/single-recipe', recipe);
     })
     .catch((error) => {
       next(error);

@@ -54,6 +54,7 @@ favoriteRouter.post(
 favoriteRouter.post('/:recipeId/', routeGuardMiddleware, (req, res, next) => {
   const { recipeId } = req.params;
   const { category } = req.query;
+  console.log(category, recipeId);
   Favorite.findOne({
     user: req.user._id,
     recipe: recipeId
