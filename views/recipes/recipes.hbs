@@ -10,14 +10,13 @@
       name="alkalinefood"
       required
     />
-    <button class="hover" type="submit">Search</button>
+    <button type="submit">Search</button>
   </label>
   {{#if noRecipes}}
     <p class="error">{{error}}</p>
   {{/if}}
   <p>You don't know which ingredients are alkaline? Check ingredients by
-    <a href="/recipes/food-list"><strong class="hover" id="list-link">Alkaline
-        Food List</strong></a></p>
+    <a href="/recipes/food-list"><strong>Alkaline Food List</strong></a></p>
 </form>
 
 <h3>Search by category</h3>
@@ -36,7 +35,8 @@
     <button class="btn btn-lg seagreen" type="button">Drinks</button>
   </a>
   <a href="/create">
-    <button class="btn btn-lg outline" type="button"><strong>Add your own recipe</strong></button>
+    <button class="btn btn-lg outline" type="button"><strong>Add your own
+        recipe!</strong></button>
   </a>
 </div>
 

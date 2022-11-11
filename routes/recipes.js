@@ -115,7 +115,7 @@ router.get('/search', routeGuard, (req, res, next) => {
       if (!alkalinefood || recipes.length === 0) {
         res.render('recipes/recipes', {
           noRecipes: true,
-          error: 'This might not be alkaline!'
+          error: 'This might not be alkaline'
         });
       }
     })
