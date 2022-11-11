@@ -2,7 +2,7 @@
   <h2>{{title}}</h2>
   <img src="{{picture}}" alt="{{title}}" />
 </a>
-{{#if favorited}}
+{{!-- {{#if favorited}}
   <form
     method="POST"
     action="/favorite/{{_id}}/unfavorite?category={{category}}"
@@ -12,5 +12,26 @@
 {{else}}
   <form method="POST" action="/favorite/{{_id}}?category={{category}}">
     <button type="submit">Favorite</button>
+  </form>
+{{/if}} --}}
+
+{{#if favorited}}
+  <form
+    method="POST"
+    action="/favorite/{{_id}}/unfavorite?category={{category}}"
+  >
+    <button type="submit">
+      <img
+        class="heartbtn"
+        src="/images/lemon-button-white.png"
+        alt="unfavorite"
+      />
+    </button>
+  </form>
+{{else}}
+  <form method="POST" action="/favorite/{{_id}}?category={{category}}">
+    <button type="submit">
+      <img class="heartbtn" src="/images/lemon-button2.png" alt="favorite" />
+    </button>
   </form>
 {{/if}}

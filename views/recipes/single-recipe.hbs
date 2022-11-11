@@ -8,13 +8,17 @@
     action="/favorite/{{_id}}/unfavorite?category={{category}}"
   >
     <button type="submit">
-      <img src="/images/heart-fill.png" alt="unfavorite" />
+      <img
+        class="heartbtn"
+        src="/images/lemon-button-white.png"
+        alt="unfavorite"
+      />
     </button>
   </form>
 {{else}}
   <form method="POST" action="/favorite/{{_id}}?category={{category}}">
     <button type="submit">
-      <img src="/images/heart-line.png" alt="favorite" />
+      <img class="heartbtn" src="/images/lemon-button2.png" alt="favorite" />
     </button>
   </form>
 {{/if}}
@@ -27,5 +31,9 @@
 <p>{{instruction}}</p>
 
 <h3 class="goBack">
-  <a href="javascript:history.back()">Go back</a>
+  <a href="javascript:history.back()"><img
+      alt="goBack"
+      src="/images/go-back.png"
+      class="arrowBack"
+    /></a>
 </h3>

@@ -14,17 +14,37 @@
           method="POST"
           action="/favorite/{{_id}}/unfavorite?category={{category}}"
         >
-          <input type="submit" value="Unfavorite" />
+          <button type="submit">
+            <img
+              class="heartbtn"
+              src="/images/lemon-button-white.png"
+              alt="unfavorite"
+            />
+          </button>
         </form>
       {{else}}
         <form method="POST" action="/favorite/{{_id}}?category={{category}}">
-          <button type="submit">Favorite</button>
+          <button type="submit">
+            <img
+              class="heartbtn"
+              src="/images/lemon-button2.png"
+              alt="favorite"
+            />
+          </button>
         </form>
       {{/if}}
     {{/each}}
   </ul>
 </div>
 
-<h3 class="goBack">
+{{! <h3 class="goBack">
   <a href="/recipes">Go back</a>
+</h3> }}
+
+<h3 class="goBack">
+  <a href="/recipes"><img
+      alt="goBack"
+      src="/images/go-back.png"
+      class="arrowBack"
+    /></a>
 </h3>
