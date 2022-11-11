@@ -24,9 +24,8 @@ body {
   font-family: $font-sans;
   line-height: 2;
   height: 100%;
-  //background-color: lemonchiffon;
-  // Farbverlauf
-  background: linear-gradient(0deg, lemonchiffon, #ffec8b);
+  background-color: lemonchiffon;
+  // background: linear-gradient(0deg, lemonchiffon, #ffec8b);
 }
 
 a {
@@ -115,6 +114,15 @@ label {
   padding: 60px 0 40px;
 }
 
+.startText {
+  line-height: 1.5em;
+}
+
+.startTextBig {
+  font-weight: bold;
+  line-height: 1.5em;
+}
+
 // Account page
 #welcome {
   text-align: center;
@@ -128,27 +136,27 @@ label {
   font-size: 2.5em;
   text-align: center;
   line-height: 1.5em;
-  width: 240px;
-  height: 320px;
-  padding: 30px;
-  background: seagreen;
-  color: white;
   position: relative;
-  -moz-border-radius: 15px;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
-  box-shadow: 2px 2px 5px 1px grey;
+  box-sizing: border-box;
+  padding: 2rem 4rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 3px grey) drop-shadow(0 0 3px grey);
 }
 
 .lemonphrase .phrase:before {
   content: '';
   position: absolute;
-  left: 100%;
-  top: 36px;
+  left: 99%;
+  top: 160px;
   width: 0;
   height: 0;
   border-top: 16px solid transparent;
-  border-left: 36px solid seagreen;
+  border-left: 36px solid white;
   border-bottom: 16px solid transparent;
 }
 
@@ -219,7 +227,7 @@ label {
   background-color: white;
 }
 
-// Category page
+// Category page & create Account & login
 .search {
   align-items: center;
   margin: 10px;
@@ -241,6 +249,12 @@ label {
   }
 }
 
+.input-name,
+.input-email,
+.input-password {
+  width: 500px;
+}
+
 .categoryBtns {
   display: flex;
   flex-direction: column;
@@ -257,9 +271,18 @@ label {
   margin: 60px 0;
 }
 
+/*
 .favoriteBtn {
   font-family: Lemon Friday;
 }
+<<<<<<< HEAD
+*/
+
+#list-link {
+  font-size: 1.3em;
+}
+=======
+>>>>>>> 06caf1ea0376b5bcab9b91737629ccb4c9e5ddea
 
 // lemon heart buttons
 
