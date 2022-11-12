@@ -363,3 +363,28 @@ label {
   align-items: center;
   border-bottom: 500px;
 }
+
+.sure {
+  text-transform: uppercase;
+  transform: scale(1, 2);
+  width: 100%;
+  padding: 30px;
+  height: 30px;
+  font-size: 1.5em;
+  margin: 0.3em 0.3em 1em 0.3em;
+  color: #000000;
+  line-height: 0.5em;
+  text-shadow: rgba(198, 197, 139, 0.5) -1px 0, rgba(115, 199, 118, 0.3) 0 -1px,
+    rgba(143, 57, 91, 0.5) 2px 2px, rgba(213, 194, 71, 0.3) -1px -2px;
+  text-align: center;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+// Selfcare Text
+
+.selfcare {
+  font-size: 200px;
+  text-shadow: #c0ff3e;
+  padding: 10px;
+}
