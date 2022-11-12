@@ -20,18 +20,14 @@
     method="POST"
     action="/favorite/{{_id}}/unfavorite?category={{category}}"
   >
-    <button class="hover" type="submit">
-      <img
-        class="heartbtn"
-        src="/images/lemon-button-white.png"
-        alt="unfavorite"
-      />
+    <button class="hover heartbtn" type="submit">
+      <img src="/images/lemon-button-white.png" alt="unfavorite" />
     </button>
   </form>
 {{else}}
   <form method="POST" action="/favorite/{{_id}}?category={{category}}">
-    <button class="hover" type="submit">
-      <img class="heartbtn" src="/images/lemon-button2.png" alt="favorite" />
+    <button class="hover heartbtn" type="submit">
+      <img src="/images/lemon-button2.png" alt="favorite" />
     </button>
   </form>
 {{/if}}
