@@ -9504,6 +9504,22 @@ label {
   font-weight: bold;
 }
 
+.welcomeText {
+  font-family: 'Lemon Friday';
+  font-style: unset;
+  align-items: center;
+  font-size: 35px;
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+}
+
+.welcomeText img {
+  width: 10%;
+  height: 10%;
+  filter: drop-shadow(0 0 0.7em #a39d9d);
+}
+
 /*
 // Account page, 2 Containers: 1. speechbubble 2. lemon
 .lemonphrase .phrase {
