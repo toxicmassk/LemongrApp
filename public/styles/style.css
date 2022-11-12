@@ -9449,13 +9449,6 @@ button,
   box-shadow: none;
 }
 
-input,
-textarea,
-select {
-  background-color: white;
-  border: 3px solid palegreen;
-}
-
 textarea {
   background-color: white;
   min-height: 8em;
@@ -9468,11 +9461,7 @@ label {
 
 .error {
   padding: 1em 10.5em;
-<<<<<<< HEAD
   background-color: darkorange;
-=======
-  background-color: tomato;
->>>>>>> 99f9768a3db24ed57f18f76d97987ebdf7199fd1
   color: white;
   border-radius: 12px;
 }
@@ -9673,13 +9662,10 @@ button.favBtn {
   padding: 0 4em;
 }
 
-<<<<<<< HEAD
 .centered {
   text-align: center;
 }
 
-=======
->>>>>>> 99f9768a3db24ed57f18f76d97987ebdf7199fd1
 .hover:hover {
   cursor: grab;
   color: #5b9f4a;
