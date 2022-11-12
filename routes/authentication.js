@@ -63,7 +63,7 @@ router.post('/log-in', (req, res, next) => {
     });
 });
 
-router.post('/log-out', routeGuard, (req, res, next) => {
+router.post('/log-out', (req, res, next) => {
   req.session.destroy();
   res.redirect('/');
 });
