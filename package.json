@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./app",
-    "dev": "nodemon ./app -e js,hbs",
+    "dev": "nodemon ./app -e js,hbs,scss",
     "dev:debug": "DEBUG=lemon* npm run dev",
     "lint": "eslint ."
   },

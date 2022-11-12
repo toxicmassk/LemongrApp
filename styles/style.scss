@@ -17,15 +17,11 @@ $grey: hsl(0, 0, 90%);
 }
 
 body {
-  max-width: 52em;
-  padding: 0 1em;
-  margin: 0 auto;
   font-family: sans-serif;
   font-family: $font-sans;
   line-height: 2;
   height: 100%;
-  background-color: lemonchiffon;
-  // background: linear-gradient(0deg, lemonchiffon, #ffec8b);
+  background: linear-gradient(0deg, #ffec8b, lemonchiffon, #ffec8b);
 }
 
 a {
@@ -64,7 +60,8 @@ p {
   }
 }
 
-h1 {
+h1,
+h2 {
   text-align: center;
 }
 
@@ -86,12 +83,19 @@ select,
 button,
 .btn {
   padding: 1em;
-  border: 1px solid $grey;
-  border-radius: 0;
+  border: 3px solid palegreen;
+  border-radius: 12px;
   margin-bottom: 1em;
   font: inherit;
   color: inherit;
   background-color: transparent;
+}
+
+input,
+textarea,
+select {
+  background-color: white;
+  border: 3px solid palegreen;
 }
 
 textarea {
@@ -104,9 +108,10 @@ label {
 }
 
 .error {
-  padding: 1em;
-  background-color: darkorange;
+  padding: 1em 10.5em;
+  background-color: tomato;
   color: white;
+  border-radius: 12px;
 }
 
 // Home page
@@ -131,6 +136,7 @@ label {
   font-weight: bold;
 }
 
+// Account page, 2 Containers: 1. speechbubble 2. lemon
 .lemonphrase .phrase {
   font-family: 'Lemon Friday';
   font-size: 2.5em;
@@ -143,11 +149,14 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20rem;
+  width: 394px;
+  height: 364px;
+
   border-radius: 50%;
   filter: drop-shadow(0 0 3px grey) drop-shadow(0 0 3px grey);
 }
 
+// speechbubble tail
 .lemonphrase .phrase:before {
   content: '';
   position: absolute;
@@ -235,11 +244,17 @@ label {
   button {
     border-radius: 12px;
   }
+
+  input.large {
+    width: 700px;
+  }
+
   input {
     border: 3px solid palegreen;
     width: 420px;
     background-color: white;
   }
+
   button {
     background: palegreen;
     font-family: Lemon Friday;
@@ -247,12 +262,6 @@ label {
   p strong {
     color: darkorange;
   }
-}
-
-.input-name,
-.input-email,
-.input-password {
-  width: 500px;
 }
 
 .categoryBtns {
@@ -282,7 +291,6 @@ label {
 }
 
 // lemon heart buttons
-
 .heartbtn {
   align-items: center;
   width: 10%;
@@ -290,7 +298,6 @@ label {
 }
 
 // Arrow go Back
-
 .arrowBack {
   width: 10%;
   height: 10%;
@@ -300,4 +307,56 @@ label {
 .col {
   width: 70%;
   height: 70%;
+}
+
+// sizes images in category-mode
+.category-img {
+  //width: 730px;
+  width: 100%;
+  //height: 485px;
+  object-fit: cover;
+  object-position: center;
+}
+
+// Body of the page - main padding
+.container {
+  padding: 0 4em;
+}
+
+.hover:hover {
+  cursor: grab;
+  color: #5b9f4a;
+  text-decoration: underline;
+}
+
+// Delete page, 2 Containers: 1. speechbubble 2. lemon
+.deletPhrase .ohNo {
+  font-family: 'Lemon Friday';
+  font-size: 2.5em;
+  text-align: center;
+  line-height: 1.5em;
+  position: relative;
+  box-sizing: border-box;
+  padding: 1rem 2rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 3px grey) drop-shadow(0 0 3px grey);
+}
+
+// speechbubble tail
+.deletPhrase .ohNo:before {
+  content: '';
+  position: absolute;
+  left: 99%;
+  top: 160px;
+  width: 0;
+  height: 0;
+  border-top: 16px solid transparent;
+  border-left: 36px solid white;
+  border-bottom: 16px solid transparent;
 }

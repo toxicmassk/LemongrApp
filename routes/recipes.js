@@ -108,14 +108,15 @@ router.get('/search', routeGuard, (req, res, next) => {
   const { alkalinefood } = req.query;
   Recipe.find({ alkalinefood })
     .then((recipes) => {
-      res.render('recipes/search', {
-        recipes,
-        alkalinefoodParent: alkalinefood
-      });
       if (!alkalinefood || recipes.length === 0) {
         res.render('recipes/recipes', {
           noRecipes: true,
-          error: 'This might not be alkaline'
+          error: 'This might not be alkaline !'
+        });
+      } else {
+        res.render('recipes/search', {
+          recipes,
+          alkalinefoodParent: alkalinefood
         });
       }
     })
