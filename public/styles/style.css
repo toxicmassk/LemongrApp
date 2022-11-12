@@ -9357,14 +9357,11 @@ a.text-dark:focus {
 }
 
 body {
-  max-width: 52em;
-  padding: 0 1em;
-  margin: 0 auto;
   font-family: sans-serif;
   font-family: "Urbanist", sans-serif;
   line-height: 2;
   height: 100%;
-  background-color: lemonchiffon;
+  background: linear-gradient(0deg, #ffec8b, lemonchiffon, #ffec8b);
 }
 
 a {
@@ -9412,7 +9409,8 @@ p:not(:last-child) {
   margin-bottom: 1rem;
 }
 
-h1 {
+h1,
+h2 {
   text-align: center;
 }
 
@@ -9434,12 +9432,19 @@ select,
 button,
 .btn {
   padding: 1em;
-  border: 1px solid #e6e6e6;
-  border-radius: 0;
+  border: 3px solid palegreen;
+  border-radius: 12px;
   margin-bottom: 1em;
   font: inherit;
   color: inherit;
   background-color: transparent;
+}
+
+input,
+textarea,
+select {
+  background-color: white;
+  border: 3px solid palegreen;
 }
 
 textarea {
@@ -9452,9 +9457,10 @@ label {
 }
 
 .error {
-  padding: 1em;
-  background-color: darkorange;
+  padding: 1em 10.5em;
+  background-color: tomato;
   color: white;
+  border-radius: 12px;
 }
 
 #startLogo {
@@ -9468,6 +9474,16 @@ label {
 .startTextBig {
   font-weight: bold;
   line-height: 1.5em;
+}
+
+.register {
+  padding-left: 450px;
+  font-size: large;
+}
+
+.login {
+  padding-left: 750px;
+  font-size: large;
 }
 
 #welcome {
@@ -9489,7 +9505,8 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20rem;
+  width: 394px;
+  height: 364px;
   border-radius: 50%;
   filter: drop-shadow(0 0 3px grey) drop-shadow(0 0 3px grey);
 }
@@ -9580,6 +9597,10 @@ label {
   border-radius: 12px;
 }
 
+.search input.large {
+  width: 700px;
+}
+
 .search input {
   border: 3px solid palegreen;
   width: 420px;
@@ -9593,12 +9614,6 @@ label {
 
 .search p strong {
   color: darkorange;
-}
-
-.input-name,
-.input-email,
-.input-password {
-  width: 500px;
 }
 
 .categoryBtns {
@@ -9641,6 +9656,52 @@ label {
 .col {
   width: 70%;
   height: 70%;
+}
+
+.category-img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.container {
+  padding: 0 4em;
+}
+
+.hover:hover {
+  cursor: grab;
+  color: #5b9f4a;
+  text-decoration: underline;
+}
+
+.deletPhrase .ohNo {
+  font-family: 'Lemon Friday';
+  font-size: 2.5em;
+  text-align: center;
+  line-height: 1.5em;
+  position: relative;
+  box-sizing: border-box;
+  padding: 1rem 2rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 3px grey) drop-shadow(0 0 3px grey);
+}
+
+.deletPhrase .ohNo:before {
+  content: '';
+  position: absolute;
+  left: 99%;
+  top: 160px;
+  width: 0;
+  height: 0;
+  border-top: 16px solid transparent;
+  border-left: 36px solid white;
+  border-bottom: 16px solid transparent;
 }
 
 .intro {
