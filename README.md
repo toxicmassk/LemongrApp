@@ -2,6 +2,8 @@
 
 An app that facilitates the alkaline lifestyle in everyday life. Users can create a collection of their favorite recipes, tips and lifehacks.
 
+The app was created with JavaScript, Express, MongoDB, NodeJs & CSS.
+
 ## Project of Wibi and me
 
 ![jumping-lemon](/public/images/jumping-lemon.png)
