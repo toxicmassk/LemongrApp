@@ -2,6 +2,10 @@
 
 An app that facilitates the alkaline lifestyle in everyday life. Users can create a collection of their favorite recipes, tips and lifehacks.
 
+## Project of Wibi and me
+
+![jumping-lemon](/public/images/jumping-lemon.png)
+
 ## Pages in sign-in process
 
 Home - introduction. For authenticated users, display log in link. For visitors, display sign up link.
