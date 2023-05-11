@@ -6,7 +6,7 @@ An app that facilitates the alkaline lifestyle in everyday life. Users can creat
 
 ![jumping-lemon](/public/images/jumping-lemon.png)
 
-## Pages in sign-in process
+## Pages in sign-in process ✅
 
 Home - introduction. For authenticated users, display log in link. For visitors, display sign up link.
 
@@ -14,7 +14,7 @@ Log In - Allows user to log in.
 
 Sign in - Allows new user to sign in.
 
-## Pages when signed in
+## Pages when signed in ✅
 
 Above each page is a burger-menu with links to Account, Alkaline Food, Selfcare, search function (+ page search function)
 
@@ -45,7 +45,7 @@ GET - '/create-account' - Render sign in page - done
 
 POST - '/create-account' - Handle sign in form submission - done
 
-`Julia`
+`Julia` ✅
 
 GET - '/account' - Load authenticated user
 
@@ -63,7 +63,7 @@ GET - '/recipes/category?category=NameOfCategory - Load all recipes of one categ
 
 GET - '/category/:id' - Load single recipe
 
-`Julia`
+`Julia` ✅
 
 GET - '/favorites/- Load favorites, render favorites page (route guard middleware)
 
@@ -112,11 +112,11 @@ Forum – exchange between users
 
 Map tracker – users can post restaurant links, shows users links to restaurants
 
-### Search function
+### Search function ✅
 
 users can searches recipes by individual ingredients (that they have)
 
-### Post recipes
+### Post recipes ✅
 
 users can post own recipes that fit the alkaline criteria (filter)
 
