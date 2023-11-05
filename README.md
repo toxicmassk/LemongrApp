@@ -4,6 +4,42 @@ An app that facilitates the alkaline lifestyle in everyday life. Users can creat
 
 The app was created with JavaScript, Express, MongoDB, NodeJs & CSS.
 
+
+### How to Start
+1. Clone or download the project repository to your local machine.
+2. Navigate to the project directory using your terminal or command prompt.
+3. Run `npm install` to install the required packages.
+4. Run `npm start` to start the app locally.
+
+### Environment Variables
+This app uses environment variables for configuration. You should create a `.env` file in the project's root directory and define the following variables:
+
+- `MONGODB_URI` - The connection URI for your MongoDB database.
+- `SESSION_SECRET` - A secret key for session management.
+- `PORT` - The port on which the app will run locally (default is 3000).
+
+Here's an example of a `.env` file:
+
+```plaintext
+MONGODB_URI=your-mongodb-uri
+SESSION_SECRET=your-secret-key
+PORT=3000
+
+
+Make sure to keep your .env file secure and not share sensitive information.
+
+This extended README now includes information about project commands, how to start the app, setting up environment variables, and general instructions, providing a comprehensive guide for users and developers interested in your app.
+
+
+
+
+
+
+
+
+
+Task devision:
+
 ## Project of Wibi and me
 
 ![jumping-lemon](/public/images/jumping-lemon.png)
