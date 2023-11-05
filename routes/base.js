@@ -19,7 +19,7 @@ router.get('/account', routeGuard, (req, res, next) => {
     })
     .then((randomPhrase) => {
       console.log(randomPhrase);
-      res.render('account/account', { phrase: randomPhrase.phrase });
+      res.render('account/account', { phrase: "Welcome" });
     })
     .catch((error) => {
       next(error);

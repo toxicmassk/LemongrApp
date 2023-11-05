@@ -89,7 +89,7 @@ mongoose
   .then(() => {
     console.log(`Database connected to URI "${MONGODB_URI}"`);
     app
-      .listen(Number(PORT), () => {
+      .listen(Number(PORT|| 3000), () => {
         console.log(`Server listening to requests on port ${PORT}`);
         if (NODE_ENV === 'development') {
           console.log(`Visit http://localhost:${PORT} to develop your app`);
